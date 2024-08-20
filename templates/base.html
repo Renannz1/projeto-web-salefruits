@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <!-- Carregando arquivo css -->
+    {% load static %}
+    <title>{% block title %}Meu Sistema{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <nav>
+            <ul>
+
+                <li><a href="{% url 'listar_usuarios' %}">Lista de Usuários</a></li>
+                
+                {% if user.is_authenticated %}
+                    <!-- Se o usuário estiver autenticado -->
+                    <!-- Vai exibir o username do usuário -->
+                    <li><a href="{% url 'perfil_usuario' %}"><span>{{ user.username }}</span></a></li>
+                    <li><a href="{% url 'logout' %}">Sair</a></li>
+                    {% else %}
+                    <!-- Se o usuário não estiver autenticado -->
+                    <a href="{% url 'login' %}">Entrar</a>
+                    <a href="{% url 'register' %}">Cadastrar</a>
+                {% endif %}  
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA PRINCIPAL -->
+    <div class="conteudo">
+        {% block content %}
+        <!-- O conteúdo específico de cada página será inserido aqui -->
+        {% endblock %}
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 SALEFRUITS. </p>
+    </footer>
+</body>
+</html>

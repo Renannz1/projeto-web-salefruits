@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do site */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url(../img/background-base.jpg);
+}
+
+/* Cabeçalho */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: solid;
+}
+
+/* Conteúdo da página */
+.conteudo {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffffc1;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: #fff;
+
+    position: fixed;  
+    bottom: 0;  
+    left: 0;
+    width: 100%;  
+    text-align: center;  
+    padding: 10px;  
+}
+
+footer p {
+    margin: 0;
+}

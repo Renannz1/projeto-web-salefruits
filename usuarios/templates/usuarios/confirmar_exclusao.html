@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar Exclusão</title>
+</head>
+<body>
+    <h2>Tem certeza que deseja excluir o usuário "{{ usuario.nome }}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+        <a href="{% url 'listar_usuarios' %}">Cancelar</a>
+    </form>
+</body>
+</html>

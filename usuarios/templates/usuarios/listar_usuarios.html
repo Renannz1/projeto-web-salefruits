@@ -1,0 +1,30 @@
+{% extends 'base.html' %}  <!-- Modificado para estender diretamente base.html -->
+
+{% load static %}  <!-- Carregar a tag 'static', se não estiver carregada no base.html -->
+
+<!-- Define o título da página -->
+{% block title %}
+    Lista de Usuários  
+{% endblock %}
+
+<!-- Bloco principal da página -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'usuarios/css/listar_usuarios.css' %}">
+    <h2 class="titulo">Lista de Usuários</h2>  <!-- Cabeçalho da lista de usuários -->
+    
+    <div class="usuario-grid">
+        <!-- Loop através de cada usuário na lista -->
+        {% for usuario in usuarios %}  
+            <div class="usuario-card">
+                <h3>{{ usuario.nome }}</h3>  
+                <p>{{ usuario.telefone }}</p>  
+
+                <!-- Se o usuário logado for administrador ou o próprio usuário, exibe links de edição e exclusão -->
+                {% if user.is_staff or user == usuario.user %}
+                    <a href="{% url 'editar_usuario' usuario.id %}">Editar</a> |
+                    <a href="{% url 'excluir_usuario' usuario.id %}">Excluir</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

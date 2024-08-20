@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil do Usuário</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'usuarios/css/perfil_usuario.css' %}">
+</head>
+<body>
+    <h2>Meu Perfil</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</body>
+</html>
