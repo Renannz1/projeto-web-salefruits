@@ -20,7 +20,8 @@
                 <p>{{ usuario.telefone }}</p>  
 
                 <!-- Se o usuário logado for administrador ou o próprio usuário, exibe links de edição e exclusão -->
-                {% if user.is_staff or user == usuario.user %}
+                
+                {% if user.is_staff%}
                     <a href="{% url 'editar_usuario' usuario.id %}">Editar</a> |
                     <a href="{% url 'excluir_usuario' usuario.id %}">Excluir</a>
                 {% endif %}
