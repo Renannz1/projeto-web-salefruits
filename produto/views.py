@@ -1,12 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Produto
-from .forms import ProdutoForm
+from .forms import FiltroProdutoForm, ProdutoForm
 
 @login_required
 def listar_produtos(request):
-    produtos = Produto.objects.filter(usuario=request.user)
-    return render(request, 'produto/listar_produtos.html', {'produtos': produtos})
+    form = FiltroProdutoForm(request.GET)
+    produtos = Produto.objects.all()
+    
+    if form.is_valid():
+        categoria = form.cleaned_data.get('categoria')
+        if categoria:
+            produtos = produtos.filter(categoria=categoria)
+    
+    return render(request, 'produto/listar_produtos.html', {'produtos': produtos, 'form': form})
 
 @login_required
 def adicionar_produto(request):
@@ -23,7 +30,7 @@ def adicionar_produto(request):
 
 @login_required
 def editar_produto(request, id):
-    produto = get_object_or_404(Produto, id=id, usuario=request.user)
+    produto = get_object_or_404(Produto, pk=id)
     if request.method == 'POST':
         form = ProdutoForm(request.POST, instance=produto)
         if form.is_valid():

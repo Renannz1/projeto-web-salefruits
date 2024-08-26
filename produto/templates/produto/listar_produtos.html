@@ -14,14 +14,17 @@
 
     <h2 class="titulo">Lista de Produtos</h2>  <!-- Cabeçalho da lista de produtos -->
 
-    <!-- Linha horizontal para separar o cabeçalho dos produtos -->
-    <hr class="linha-separadora">    
+    <form method="get" class="form-filtro">
+        {{ form.as_p }}
+        <button type="submit">Filtrar</button>
+    </form>
 
-    <!-- Contêiner para o botão -->
+    <!-- Linha horizontal para separar o cabeçalho dos produtos -->
+    <hr class="linha-separadora">
+
     <div class="container-botoes">
         <a href="{% url 'adicionar_produto' %}" class="btn-adicionar">Adicionar Produto</a>
-    </div>    
-
+    </div> 
 
     <div class="produto-grid">
         <!-- Loop através de cada produto na lista -->
@@ -29,8 +32,8 @@
             <div class="produto-card">
                 <h3>{{ produto.nome }}</h3>
                 <p>{{ produto.descricao }}</p>
-                <p>Preço: R$ {{ produto.preco }}</p>
-                <p>Quantidade: {{ produto.quantidade }}</p>
+                <p>Preço da Caixa: R$ {{ produto.preco }}</p>
+                <p>Quantidade de Caixas: {{ produto.quantidade }}</p>
 
 
                 <!-- Links para editar e excluir o produto -->
