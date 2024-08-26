@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}  <!-- Carrega a tag 'static' para incluir arquivos estáticos -->
+
+
+{% block title %}
+    Adicionar/Editar Produto
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'produto/css/form_produto.css' %}">
+
+    <h2 class="titulo">Adicionar/Editar Produto</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,60 @@
+/* listar_produtos.css */
+
+.titulo {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo da linha horizontal */
+.linha-separadora {
+    border: 0;
+    height: 1px;
+    background: #ccc; /* Cor da linha horizontal */
+    margin: 1.5rem 0; /* Espaçamento superior e inferior */
+}
+
+
+
+.produto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.produto-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.produto-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.produto-card p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Estilo do contêiner que envolve o botão (se necessário) */
+.container-botoes {
+    text-align: right; /* Alinha o conteúdo à direita */
+    margin-bottom: 1rem; /* Espaçamento inferior, opcional */
+}
+
+/* Estilo do botão "Adicionar Produto" */
+.btn-adicionar {
+    background-color: #007bff; /* Azul */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}

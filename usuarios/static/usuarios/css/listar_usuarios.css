@@ -5,6 +5,16 @@
     gap: 20px;
 }
 
+
+/* Estilo da linha horizontal */
+.linha-separadora {
+    border: 0;
+    height: 1px;
+    background: #ccc; /* Cor da linha horizontal */
+    margin: 1.5rem 0; /* Espaçamento superior e inferior */
+    
+}
+
 /* Estiliza cada quadro de usuário */
 .usuario-card {
     border: 1px solid #ccc;

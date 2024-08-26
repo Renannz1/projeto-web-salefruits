@@ -1,0 +1,44 @@
+{% extends 'base.html' %}  <!-- Estende o template base.html -->
+
+{% load static %}  <!-- Carrega a tag 'static' para incluir arquivos estáticos -->
+
+<!-- Define o título da página -->
+{% block title %}
+    Lista de Produtos
+{% endblock %}
+
+<!-- Bloco principal da página -->
+{% block content %}
+    <link rel="stylesheet" href="{% static 'produto/css/listar_produtos.css' %}">
+
+
+    <h2 class="titulo">Lista de Produtos</h2>  <!-- Cabeçalho da lista de produtos -->
+
+    <!-- Linha horizontal para separar o cabeçalho dos produtos -->
+    <hr class="linha-separadora">    
+
+    <!-- Contêiner para o botão -->
+    <div class="container-botoes">
+        <a href="{% url 'adicionar_produto' %}" class="btn-adicionar">Adicionar Produto</a>
+    </div>    
+
+
+    <div class="produto-grid">
+        <!-- Loop através de cada produto na lista -->
+        {% for produto in produtos %}
+            <div class="produto-card">
+                <h3>{{ produto.nome }}</h3>
+                <p>{{ produto.descricao }}</p>
+                <p>Preço: R$ {{ produto.preco }}</p>
+                <p>Quantidade: {{ produto.quantidade }}</p>
+
+
+                <!-- Links para editar e excluir o produto -->
+                <a href="{% url 'editar_produto' produto.id %}">Editar</a> |
+                <a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+
+            </div>
+        {% endfor %}
+        
+    </div>
+{% endblock %}

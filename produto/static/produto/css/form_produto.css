@@ -1,0 +1,68 @@
+    /* Estilos gerais para o formulário de produtos */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Estilo do contêiner do formulário */
+    /*
+    form {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+    */
+
+    /* Título do formulário */
+    .titulo {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+    }
+
+    /* Estilo para os campos do formulário */
+    form p {
+        margin-bottom: 1rem;
+    }
+
+    form label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #555;
+    }
+
+    form input, 
+    form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    form textarea {
+        height: 80px;
+    }
+
+    /* Estilo do botão de envio */
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }

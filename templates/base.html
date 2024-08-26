@@ -16,6 +16,8 @@
             <ul>
 
                 <li><a href="{% url 'listar_usuarios' %}">Lista de Usuários</a></li>
+                <li><a href="{% url 'listar_produtos' %}">Meus Produtos</a></li>
+
                 
                 {% if user.is_authenticated %}
                     <!-- Se o usuário estiver autenticado -->
@@ -40,8 +42,10 @@
     </div>
 
     <!-- Rodapé -->
+     <!-- 
     <footer>
         <p>&copy; 2024 SALEFRUITS. </p>
     </footer>
+    -->
 </body>
 </html>
