@@ -3,10 +3,14 @@ from django.contrib.auth.decorators import login_required
 from .models import Produto
 from .forms import FiltroProdutoForm, ProdutoForm
 
-@login_required
 def listar_produtos(request):
     form = FiltroProdutoForm(request.GET)
-    produtos = Produto.objects.all()
+    
+    # Obtém o usuário logado
+    usuario = request.user
+    
+    # Filtra produtos apenas do usuário logado
+    produtos = Produto.objects.filter(usuario=usuario)
     
     if form.is_valid():
         categoria = form.cleaned_data.get('categoria')
@@ -47,3 +51,10 @@ def excluir_produto(request, id):
         produto.delete()
         return redirect('listar_produtos')
     return render(request, 'produto/confirmar_exclusao.html', {'produto': produto})
+
+@login_required
+def detalhar_produto(request, id):
+    # Obtém o produto com base no ID fornecido
+    produto = get_object_or_404(Produto, id=id)
+    # Renderiza o template 'detalhar_produto.html' com o contexto do produto
+    return render(request, 'produtos/detalhar_produto.html', {'produto': produto})

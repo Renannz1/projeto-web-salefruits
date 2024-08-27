@@ -1,0 +1,44 @@
+{% extends 'base.html' %}  <!-- Estende o template base.html -->
+
+{% load static %}  <!-- Carrega a tag 'static' para incluir arquivos estáticos -->
+
+<!-- Define o título da página -->
+{% block title %}
+    Mural de Vendas
+{% endblock %}
+
+<!-- Bloco principal da página -->
+{% block content %}
+
+    <!-- Bloco principal da página -->
+    <link rel="stylesheet" href="{% static 'mural/css/listar_mural.css' %}">
+
+    <h2 class="titulo">Mural - Todos os Produtos Adicionados</h2>  <!-- Cabeçalho da lista de produtos -->
+    
+    <!-- Linha horizontal para separar o cabeçalho dos produtos -->
+    <hr class="linha-separadora">
+    
+
+    <div class="container-botoes">
+        <a href="{% url 'adicionar_produto' %}" class="btn-adicionar">Adicionar Produto</a>
+    </div> 
+    
+    <div class="produto-grid">
+        <!-- Loop através de cada produto na lista -->        
+        {% for produto in produtos %}
+            <div class="produto-card">
+                <h3>{{ produto.nome }}</h2>
+                    <p>Usuário: {{ produto.usuario.username }}</p> 
+                    <p>Preço: {{ produto.preco }}</p>
+
+                <!-- Link botão para detalhar produto -->     
+                <a href="{% url 'detalhar_produto' produto.id %}" class="btn-detalhes">Ver mais detalhes</a>
+
+
+            </div>
+        {% endfor %}
+        
+    </div>
+{% endblock %}
+
+

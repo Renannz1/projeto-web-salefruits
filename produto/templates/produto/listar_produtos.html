@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'produto/css/listar_produtos.css' %}">
 
 
-    <h2 class="titulo">Lista de Produtos</h2>  <!-- Cabeçalho da lista de produtos -->
+    <h2 class="titulo">Meus Produtos Adicionados</h2>  <!-- Cabeçalho da lista de produtos -->
 
     <form method="get" class="form-filtro">
         {{ form.as_p }}
@@ -39,7 +39,7 @@
                 <!-- Links para editar e excluir o produto -->
                 <a href="{% url 'editar_produto' produto.id %}">Editar</a> |
                 <a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
-
+                
             </div>
         {% endfor %}
         

@@ -1,0 +1,21 @@
+<!-- produtos/templates/produtos/detalhar_produto.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Detalhes do Produto
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'produto/css/detalhar_produto.css' %}">
+
+
+    <div class="produto-detalhes">
+        <h2>{{ produto.nome }}</h2>
+        <p><strong>Usuário:</strong> {{ produto.usuario.nome }}</p>
+        <p><strong>Preço:</strong> {{ produto.preco }}</p>
+        <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+        <!-- Adicionar mais detalhes conforme necessário -->
+
+        <a href="{% url 'listar_mural' %}" class="btn-voltar">Voltar para o Mural</a>
+    </div>
+{% endblock %}

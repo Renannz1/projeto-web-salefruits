@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuarios',
     'produto',
+    'mural',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redireciona para a pagina escolhida após o logout
 #LOGOUT_REDIRECT_URL = 'listar_usuarios'
+
+
+LOGIN_URL = '/usuarios/login/'  # Ajuste essa URL para onde está sua página de login
