@@ -11,9 +11,10 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'produto/css/listar_produtos.css' %}">
 
+    <!-- Cabeçalho da lista de produtos -->
+    <h2 class="titulo">Meus Produtos Adicionados</h2>  
 
-    <h2 class="titulo">Meus Produtos Adicionados</h2>  <!-- Cabeçalho da lista de produtos -->
-
+    <!-- Formulário - filtro de produtos -->
     <form method="get" class="form-filtro">
         {{ form.as_p }}
         <button type="submit">Filtrar</button>

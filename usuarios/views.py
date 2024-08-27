@@ -12,8 +12,12 @@ from django.contrib.auth.models import User
 
 # ------- metodo para listar usuario -------
 def listar_usuarios(request):
+    # Obtém todos os usuários do banco de dados
     usuarios = Usuario.objects.all()
+    
+    # Renderiza a página de listagem de usuários com todos os usuários
     return render(request, 'usuarios/listar_usuarios.html', {'usuarios': usuarios})
+
 
 
 
@@ -26,32 +30,47 @@ def editar_usuario(request, usuario_id):
     # Verifica se o usuário logado tem permissão para editar o perfil:
     # Se o usuário for um administrador (is_staff) ou o próprio dono do perfil (request.user == usuario.user).
     if request.user.is_staff or request.user == usuario.user:
+        # Verifica se o método da requisição é POST (submissão do formulário)
         if request.method == 'POST':
+            # Cria uma instância do formulário com os dados enviados e o perfil do usuário
             form = UsuarioForm(request.POST, instance=usuario)
+            # Verifica se o formulário é válido
             if form.is_valid():
+                # Salva as alterações no perfil do usuário
                 form.save()
+                # Redireciona para a página de listagem de usuários após salvar
                 return redirect('listar_usuarios')
         else:
+            # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
             form = UsuarioForm(instance=usuario)
+        # Renderiza a página de edição de usuário com o formulário (vazio ou preenchido)
         return render(request, 'usuarios/editar_usuario.html', {'form': form})
     else:
-        # Se o usuário logado não tiver permissão, lança uma exceção de permissão negada.
+        # Se o usuário logado não tiver permissão, lança uma exceção de permissão negada
         raise PermissionDenied
+
 
 
 
 # ------- metodo para excluir usuario -------
 def excluir_usuario(request, usuario_id):
+    # Tenta obter o usuário pelo id, ou retorna um erro 404 se não encontrado
     usuario = get_object_or_404(Usuario, id=usuario_id)
     
     # Verifica se o usuário logado tem permissão para excluir
     if request.user.is_staff or request.user == usuario.user:
+        # Verifica se o método da requisição é POST (confirmação de exclusão)
         if request.method == 'POST':
+            # Exclui o usuário do banco de dados
             usuario.delete()
+            # Redireciona para a página de listagem de usuários após a exclusão
             return redirect('listar_usuarios')
+        # Renderiza a página de confirmação de exclusão com o usuário
         return render(request, 'usuarios/confirmar_exclusao.html', {'usuario': usuario})
     else:
+        # Se o usuário logado não tem permissão, levanta uma exceção de permissão negada
         raise PermissionDenied
+
 
 
 
@@ -60,21 +79,31 @@ def perfil_usuario(request):
     # Obtém o perfil do usuário logado
     usuario = request.user.usuario
 
+    # Verifica se o método da requisição é POST (submissão de formulário)
     if request.method == 'POST':
+        # Cria uma instância do formulário com os dados enviados e preenche com o perfil do usuário
         form = UsuarioForm(request.POST, instance=usuario)
+        # Verifica se o formulário é válido
         if form.is_valid():
+            # Salva as alterações no perfil do usuário
             form.save()
+            # Redireciona para a página de listagem de usuários após salvar
             return redirect('listar_usuarios')
     else:
+        # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
         form = UsuarioForm(instance=usuario)
 
+    # Renderiza o template de perfil do usuário com o formulário (vazio ou preenchido)
     return render(request, 'usuarios/perfil_usuario.html', {'form': form})
+
 
 
 
 # ------- metodo para cadastrar e criar usuario -------
 def register(request):
+    # Verifica se o metódo da requisição é do tipo POST
     if request.method == 'POST':
+        # Cria instâncias dos formulários com os dados enviados via POST
         user_form = UserRegisterForm(request.POST)
         usuario_form = UsuarioForm(request.POST)
         
@@ -110,8 +139,10 @@ def register(request):
 
 
 
+
 # ------- metodo para login do usuario -------
 def login_view(request):
+    # Verifica se o metódo da requisição é do tipo POST
     if request.method == "POST":
         form = UserLoginForm(data=request.POST)
 
@@ -127,6 +158,7 @@ def login_view(request):
         # Se o método não for POST, cria uma instância vazia do formulário de login
         form = UserLoginForm()
 
+    # Renderiza o template 'login.html' com o formulario
     return render(request, 'usuarios/login.html', {'form': form})
 
 

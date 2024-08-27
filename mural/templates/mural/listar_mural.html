@@ -9,16 +9,21 @@
 
 <!-- Bloco principal da página -->
 {% block content %}
-
-    <!-- Bloco principal da página -->
+    <!-- Link para o css -->
     <link rel="stylesheet" href="{% static 'mural/css/listar_mural.css' %}">
 
-    <h2 class="titulo">Mural - Todos os Produtos Adicionados</h2>  <!-- Cabeçalho da lista de produtos -->
+    <!-- Cabeçalho da lista de produtos -->
+    <h2 class="titulo">Mural - Todos os Produtos Adicionados</h2>  
     
+    <!-- Formulário - filtro de produtos -->
+    <form method="get" class="form-filtro">
+        {{ form.as_p }}
+        <button type="submit">Filtrar</button>
+    </form>
+
     <!-- Linha horizontal para separar o cabeçalho dos produtos -->
     <hr class="linha-separadora">
     
-
     <div class="container-botoes">
         <a href="{% url 'adicionar_produto' %}" class="btn-adicionar">Adicionar Produto</a>
     </div> 
@@ -34,10 +39,9 @@
                 <!-- Link botão para detalhar produto -->     
                 <a href="{% url 'detalhar_produto' produto.id %}" class="btn-detalhes">Ver mais detalhes</a>
 
-
             </div>
-        {% endfor %}
-        
+        {% endfor %} 
+
     </div>
 {% endblock %}
 
