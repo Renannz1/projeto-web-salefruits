@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Minhas Solicitações</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Comprador</th>
+            <th>Produto</th>
+            <th>Vendedor</th>
+            <th>Quantidade</th>
+            <th>Data da Solicitação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for solicitacao in solicitacoes %}
+        <tr>
+            <td>{{ solicitacao.comprador.username }}</td>
+            <td>{{ solicitacao.produto.nome }}</td>
+            <td>{{ solicitacao.vendedor.username }}</td>
+            <td>{{ solicitacao.quantidade }}</td>
+            <td>{{ solicitacao.data_solicitacao }}</td>
+            <td>
+                <a href="{% url 'detalhar_solicitacao' solicitacao.id %}">Detalhes</a>
+                <a href="{% url 'editar_solicitacao' solicitacao.id %}">Editar</a>
+                <a href="{% url 'excluir_solicitacao' solicitacao.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">Nenhuma solicitação encontrada.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

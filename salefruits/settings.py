@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'usuarios',
     'produto',
     'mural',
+    'solicitacao',
 ]
 
 MIDDLEWARE = [

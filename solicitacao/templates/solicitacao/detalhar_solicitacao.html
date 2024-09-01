@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Detalhes da Solicitação</h1>
+<p><strong>Comprador:</strong> {{ solicitacao.comprador.username }}</p>
+<p><strong>Produto:</strong> {{ solicitacao.produto.nome }}</p>
+<p><strong>Vendedor:</strong> {{ solicitacao.vendedor.username }}</p>
+<p><strong>Quantidade:</strong> {{ solicitacao.quantidade }}</p>
+<p><strong>Data da Solicitação:</strong> {{ solicitacao.data_solicitacao }}</p>
+<a href="{% url 'listar_solicitacoes' %}">Voltar para a lista</a>
+{% endblock %}

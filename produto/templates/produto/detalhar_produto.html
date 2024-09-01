@@ -1,6 +1,6 @@
 <!-- produtos/templates/produtos/detalhar_produto.html -->
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
     Detalhes do Produto
 {% endblock %}
@@ -11,11 +11,15 @@
 
     <div class="produto-detalhes">
         <h2>{{ produto.nome }}</h2>
-        <p><strong>Usuário:</strong> {{ produto.usuario.nome }}</p>
+        <p><strong>Usuário:</strong> {{ produto.usuario.username }}</p>
         <p><strong>Preço:</strong> {{ produto.preco }}</p>
         <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+        <p><strong>Qauntidade:</strong> {{ produto. }}</p>
         <!-- Adicionar mais detalhes conforme necessário -->
 
-        <a href="{% url 'listar_mural' %}" class="btn-voltar">Voltar para o Mural</a>
+        <a href="{% url 'adicionar_solicitacao' %}?produto_id={{ produto.id }}" class="btn-solicitar">Solicitar Produto</a>
+
+
     </div>
 {% endblock %}
+<!--listar solicitacoes-->

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %} Solicitação</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="produto_id" value="{{ produto.id }}">
+    <button type="submit">Solicitar Produto</button>
+</form>
+
+<a href="{% url 'listar_solicitacoes' %}">Cancelar</a>
+{% endblock %}
