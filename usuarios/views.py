@@ -16,7 +16,7 @@ def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     
     # Renderiza a página de listagem de usuários com todos os usuários
-    return render(request, 'usuarios/listar_usuarios.html', {'usuarios': usuarios})
+    return render(request, 'listar_usuarios.html', {'usuarios': usuarios})
 
 
 
@@ -44,7 +44,7 @@ def editar_usuario(request, usuario_id):
             # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
             form = UsuarioForm(instance=usuario)
         # Renderiza a página de edição de usuário com o formulário (vazio ou preenchido)
-        return render(request, 'usuarios/editar_usuario.html', {'form': form})
+        return render(request, 'editar_usuario.html', {'form': form})
     else:
         # Se o usuário logado não tiver permissão, lança uma exceção de permissão negada
         raise PermissionDenied
@@ -66,7 +66,7 @@ def excluir_usuario(request, usuario_id):
             # Redireciona para a página de listagem de usuários após a exclusão
             return redirect('listar_usuarios')
         # Renderiza a página de confirmação de exclusão com o usuário
-        return render(request, 'usuarios/confirmar_exclusao.html', {'usuario': usuario})
+        return render(request, 'confirmar_exclusao.html', {'usuario': usuario})
     else:
         # Se o usuário logado não tem permissão, levanta uma exceção de permissão negada
         raise PermissionDenied
@@ -94,7 +94,7 @@ def perfil_usuario(request):
         form = UsuarioForm(instance=usuario)
 
     # Renderiza o template de perfil do usuário com o formulário (vazio ou preenchido)
-    return render(request, 'usuarios/perfil_usuario.html', {'form': form})
+    return render(request, 'perfil_usuario.html', {'form': form})
 
 
 
@@ -125,14 +125,14 @@ def register(request):
             usuario.save()
 
             login(request, user)
-            return redirect('listar_usuarios')
+            return redirect('login')
     else:
         # Se o método não for POST, cria instâncias vazias dos formulários
         user_form = UserRegisterForm()
         usuario_form = UsuarioForm()
 
     # Renderiza o template 'register.html' com os formulários
-    return render(request, 'usuarios/register.html', {
+    return render(request, 'register.html', {
         'user_form': user_form,
         'usuario_form': usuario_form
     })
@@ -153,13 +153,13 @@ def login_view(request):
             # Realiza o login do usuário
             login(request, user)
             # Redireciona para a página inicial após o login
-            return redirect('listar_usuarios')
+            return redirect('listar_mural')
     else:
         # Se o método não for POST, cria uma instância vazia do formulário de login
         form = UserLoginForm()
 
     # Renderiza o template 'login.html' com o formulario
-    return render(request, 'usuarios/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 
 

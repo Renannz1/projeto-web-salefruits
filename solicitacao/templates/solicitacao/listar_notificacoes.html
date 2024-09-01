@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Minhas Notificações</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Data da Solicitação</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for notificacao in notificacoes %}
+        <tr>
+            <td>{{ notificacao.solicitacao.produto.nome }}</td>
+            <td>{{ notificacao.solicitacao.quantidade }}</td>
+            <td>{{ notificacao.solicitacao.data_solicitacao }}</td>
+            <td>
+                {% if notificacao.aceita is None %}
+                    Pendente
+                {% elif notificacao.aceita %}
+                    Aceita
+                {% else %}
+                    Recusada
+                {% endif %}
+            </td>
+            <td>
+                {% if notificacao.aceita is None %}
+                <a href="{% url 'responder_solicitacao' notificacao.id 'aceitar' %}">Aceitar</a>
+                <a href="{% url 'responder_solicitacao' notificacao.id 'recusar' %}">Recusar</a>
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">Nenhuma notificação encontrada.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

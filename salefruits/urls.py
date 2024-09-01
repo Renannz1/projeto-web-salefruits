@@ -11,5 +11,10 @@ urlpatterns = [
     path('produtos/', include('produto.urls')), 
     path('mural/', include('mural.urls')),
     path('chat/', include('chat.urls')),
+<<<<<<< HEAD
     path('solicitacao/', include('solicitacao.urls')),
+=======
+    path('', include('mural.urls')),
+   #     path('register/', include('usuarios.urls')),
+>>>>>>> a09671e683e65827b8c0cb7f79eabd57936fdc69
 ]

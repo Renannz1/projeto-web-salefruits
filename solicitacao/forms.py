@@ -15,3 +15,5 @@ class SolicitarProdutoForm(forms.ModelForm):
         if quantidade <= 0:
             raise forms.ValidationError('A quantidade deve ser maior que zero')
         return quantidade
+
+    
