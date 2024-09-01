@@ -650,7 +650,7 @@
         "kind": 5,
         "importPath": "mural.urls",
         "description": "mural.urls",
-        "peekOfCode": "urlpatterns = [\n    path('listar/', views.listar_mural, name='listar_mural'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('listar/', views.listar_mural, name='listar_mural'),\n    path('', views.home, name='home'),\n]",
         "detail": "mural.urls",
         "documentation": {}
     },
@@ -660,6 +660,15 @@
         "importPath": "mural.views",
         "description": "mural.views",
         "peekOfCode": "def listar_mural(request):\n    # Inicializa o formulário de filtro com os dados de GET da requisição\n    form = FiltroProdutoForm(request.GET)\n    # Recupera todos os produtos do banco de dados\n    produtos = Produto.objects.all()\n    # Verifica se o formulário foi enviado e é válido\n    if form.is_valid():\n        # Recupera a categoria selecionada no formulário\n        categoria = form.cleaned_data.get('categoria')\n        if categoria:",
+        "detail": "mural.views",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "mural.views",
+        "description": "mural.views",
+        "peekOfCode": "def home(request):\n    return render(request, 'index.html')",
         "detail": "mural.views",
         "documentation": {}
     },
@@ -857,7 +866,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "ROOT_URLCONF = 'salefruits.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [\n            BASE_DIR / 'templates',  # Diretório de templates na pasta do projeto\n            BASE_DIR / 'usuarios' / 'templates',  # Diretório de templates na pasta do app usuarios\n        ],\n        'APP_DIRS': True,\n        'OPTIONS': {",
+        "peekOfCode": "ROOT_URLCONF = 'salefruits.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [\n            BASE_DIR / 'templates',  # Diretório de templates na pasta do projeto\n           # BASE_DIR / 'usuarios' / 'templates',  # Diretório de templates na pasta do app usuarios\n        ],\n        'APP_DIRS': True,\n        'OPTIONS': {",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -866,7 +875,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [\n            BASE_DIR / 'templates',  # Diretório de templates na pasta do projeto\n            BASE_DIR / 'usuarios' / 'templates',  # Diretório de templates na pasta do app usuarios\n        ],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [\n            BASE_DIR / 'templates',  # Diretório de templates na pasta do projeto\n           # BASE_DIR / 'usuarios' / 'templates',  # Diretório de templates na pasta do app usuarios\n        ],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -947,7 +956,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / 'static',  # Diretório estático na raiz do projeto\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = '/usuarios/login/'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / 'static',  # Diretório estático na raiz do projeto\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -956,7 +965,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = '/usuarios/login/'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -965,7 +974,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = '/usuarios/login/'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -974,7 +983,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "LOGIN_URL = '/usuarios/login/'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "LOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -983,7 +992,7 @@
         "kind": 5,
         "importPath": "salefruits.urls",
         "description": "salefruits.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"usuarios/\", include(\"usuarios.urls\")),\n    path('produtos/', include('produto.urls')), \n    path('mural/', include('mural.urls')),\n    path('chat/', include('chat.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"usuarios/\", include(\"usuarios.urls\")),\n    path('produtos/', include('produto.urls')), \n    path('mural/', include('mural.urls')),\n    path('chat/', include('chat.urls')),\n    path('', include('mural.urls')),\n   #     path('register/', include('usuarios.urls')),\n]",
         "detail": "salefruits.urls",
         "documentation": {}
     },
@@ -1064,7 +1073,7 @@
         "kind": 2,
         "importPath": "usuarios.views",
         "description": "usuarios.views",
-        "peekOfCode": "def listar_usuarios(request):\n    # Obtém todos os usuários do banco de dados\n    usuarios = Usuario.objects.all()\n    # Renderiza a página de listagem de usuários com todos os usuários\n    return render(request, 'usuarios/listar_usuarios.html', {'usuarios': usuarios})\n# ------- metodo para editar usuario -------\ndef editar_usuario(request, usuario_id):\n    # Busca o objeto Usuario correspondente ao usuario_id no banco de dados.\n    # Se não encontrar, retorna uma página 404 (não encontrado).\n    usuario = get_object_or_404(Usuario, id=usuario_id)",
+        "peekOfCode": "def listar_usuarios(request):\n    # Obtém todos os usuários do banco de dados\n    usuarios = Usuario.objects.all()\n    # Renderiza a página de listagem de usuários com todos os usuários\n    return render(request, 'listar_usuarios.html', {'usuarios': usuarios})\n# ------- metodo para editar usuario -------\ndef editar_usuario(request, usuario_id):\n    # Busca o objeto Usuario correspondente ao usuario_id no banco de dados.\n    # Se não encontrar, retorna uma página 404 (não encontrado).\n    usuario = get_object_or_404(Usuario, id=usuario_id)",
         "detail": "usuarios.views",
         "documentation": {}
     },

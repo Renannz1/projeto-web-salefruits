@@ -60,7 +60,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'templates',  # Diretório de templates na pasta do projeto
-            BASE_DIR / 'usuarios' / 'templates',  # Diretório de templates na pasta do app usuarios
+           # BASE_DIR / 'usuarios' / 'templates',  # Diretório de templates na pasta do app usuarios
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -139,4 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #LOGOUT_REDIRECT_URL = 'listar_usuarios'
 
 
-LOGIN_URL = '/usuarios/login/'  # Ajuste essa URL para onde está sua página de login
+LOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login

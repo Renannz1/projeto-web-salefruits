@@ -11,4 +11,6 @@ urlpatterns = [
     path('produtos/', include('produto.urls')), 
     path('mural/', include('mural.urls')),
     path('chat/', include('chat.urls')),
+    path('', include('mural.urls')),
+   #     path('register/', include('usuarios.urls')),
 ]
