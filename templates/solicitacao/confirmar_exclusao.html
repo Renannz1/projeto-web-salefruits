@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Confirmar Exclusão</h1>
-<p>Você tem certeza que deseja excluir a solicitação de {{ solicitacao.produto.nome }}?</p>
+<h1 class="h">Confirmar Exclusão</h1>
+<p class = "h">Você tem certeza que deseja excluir a solicitação de {{ solicitacao.produto.nome }}?</p>
 <form method="post">
     {% csrf_token %}
     <button class="btn btn-success" type="submit">Confirmar Exclusão</button>

@@ -20,8 +20,8 @@ def listar_mural(request):
             produtos = produtos.filter(categoria=categoria)
 
     # Renderiza o template de mural, passando a lista de produtos e o formulário
-    return render(request, 'listar_mural.html', {'produtos': produtos, 'form': form})
+    return render(request, 'mural/listar_mural.html', {'produtos': produtos, 'form': form})
 
 
 def home(request):
-    return render(request, 'listar_mural.html')
+    return render(request, 'mural/listar_mural.html')

@@ -110,10 +110,17 @@
   background-color: #0056b3;
 }
 
-.h{
-  color: #ffffff;
-
+.h {
+  color: #f5f5f5; /* Cor do texto */
+  background-color: #007bff; /* Fundo azul */
+  padding: 10px; /* Espaço interno para evitar que o texto encoste nas bordas */
+  border-radius: 5px; /* Bordas arredondadas para um visual mais suave */
+  margin: 0px; /* Espaço externo ao redor do elemento */
+  margin-top: 10px; /* Espaço adicional acima do elemento */
+  margin-bottom: 30px; /* Espaço adicional abaixo do elemento */
+  text-align: center; /* Centraliza o texto dentro do elemento */
 }
+
 
 
 .container h2 {
@@ -342,12 +349,18 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
+/* Estilo para h1 e .h1 com dimensionamento responsivo */
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.5rem + 2vw); /* Ajuste mais suave para tamanhos de tela menores */
+  line-height: 1.2; /* Melhor espaçamento entre linhas */
+  font-weight: 700; /* Torna o título mais robusto */
+  margin-bottom: 0.5em; /* Espaço inferior ajustado */
 }
+
+/* Ajuste para telas maiores */
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Tamanho maior e mais impactante em telas grandes */
   }
 }
 

@@ -845,7 +845,7 @@
         "kind": 2,
         "importPath": "mural.views",
         "description": "mural.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'listar_mural.html')",
+        "peekOfCode": "def home(request):\n    return render(request, 'mural/listar_mural.html')",
         "detail": "mural.views",
         "documentation": {}
     },
@@ -971,7 +971,7 @@
         "kind": 2,
         "importPath": "produto.views",
         "description": "produto.views",
-        "peekOfCode": "def detalhar_produto(request, id):\n    # Obtém o produto com base no ID fornecido\n    produto = get_object_or_404(Produto, id=id)\n    # Renderiza o template 'detalhar_produto.html' com o contexto do produto\n    return render(request, 'detalhar_produto.html', {'produto': produto})",
+        "peekOfCode": "def detalhar_produto(request, id):\n    # Obtém o produto com base no ID fornecido\n    produto = get_object_or_404(Produto, id=id)\n    # Renderiza o template 'detalhar_produto.html' com o contexto do produto\n    return render(request, 'produto/detalhar_produto.html', {'produto': produto})",
         "detail": "produto.views",
         "documentation": {}
     },
