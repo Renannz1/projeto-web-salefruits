@@ -11,3 +11,12 @@ class Solicitacao(models.Model):
 
     def __str__(self):
         return f"{self.comprador.username} solicitou {self.quantidade} de {self.produto.nome}"
+class Notificacao(models.Model):
+    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificacoes')
+    solicitacao = models.ForeignKey(Solicitacao, on_delete=models.CASCADE)
+    mensagem = models.TextField(default="Mensagem padrão")
+    lida = models.BooleanField(default=False)
+    data_criacao = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Notificação para {self.vendedor.username} sobre a solicitação de {self.solicitacao.produto.nome}"

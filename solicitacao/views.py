@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Solicitacao, Produto
+from .models import Notificacao, Solicitacao, Produto
 from .forms import SolicitarProdutoForm
 
 # ------- Método para listar todas as solicitações -------
@@ -35,6 +35,14 @@ def adicionar_solicitacao(request):
                 vendedor=produto.usuario,
                 quantidade=quantidade
             )
+
+            # Criar uma notificação para o vendedor
+            Notificacao.objects.create(
+                vendedor=produto.usuario,
+                solicitacao=solicitacao,
+                mensagem=f"Nova solicitação de {request.user.username} para o produto {produto.nome}."
+                
+            )
             return redirect('listar_solicitacoes')
     else:
         produto_id = request.GET.get('produto_id')
@@ -67,3 +75,31 @@ def excluir_solicitacao(request, id):
         solicitacao.delete()
         return redirect('listar_solicitacoes')
     return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})
+
+@login_required
+def listar_notificacoes(request):
+    notificacoes = request.user.notificacoes.filter(lida=False)
+    print("Notificações:", notificacoes)  # Adicione isto para depuração
+    return render(request, 'listar_notificacoes.html', {'notificacoes': notificacoes})
+
+
+@login_required
+def aceitar_solicitacao(request, notificacao_id):
+    notificacao = get_object_or_404(Notificacao, id=notificacao_id)
+    solicitacao = notificacao.solicitacao
+    solicitacao.status = 'Aceita'
+    solicitacao.save()
+    notificacao.lida = True
+    notificacao.save()
+    return redirect('listar_notificacoes')
+
+
+@login_required
+def recusar_solicitacao(request, notificacao_id):
+    notificacao = get_object_or_404(Notificacao, id=notificacao_id)
+    solicitacao = notificacao.solicitacao
+    solicitacao.status = 'Recusada'
+    solicitacao.save()
+    notificacao.lida = True
+    notificacao.save()
+    return redirect('listar_notificacoes')
