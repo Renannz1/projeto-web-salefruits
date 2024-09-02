@@ -35,7 +35,7 @@ def editar_usuario(request, usuario_id):
             # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
             form = UsuarioForm(instance=usuario)
         # Renderiza a página de edição de usuário com o formulário (vazio ou preenchido)
-        return render(request, 'editar_usuario.html', {'form': form})
+        return render(request, 'login/editar_usuario.html', {'form': form})
     else:
         # Se o usuário logado não tiver permissão, lança uma exceção de permissão negada
         raise PermissionDenied
@@ -57,7 +57,7 @@ def excluir_usuario(request, usuario_id):
             # Redireciona para a página de listagem de usuários após a exclusão
             return redirect('listar_mural')
         # Renderiza a página de confirmação de exclusão com o usuário
-        return render(request, 'confirmar_exclusao.html', {'usuario': usuario})
+        return render(request, 'login/confirmar_exclusao.html', {'usuario': usuario})
     else:
         # Se o usuário logado não tem permissão, levanta uma exceção de permissão negada
         raise PermissionDenied
@@ -86,7 +86,7 @@ def perfil_usuario(request):
         form = UsuarioForm(instance=usuario)
 
     # Renderiza o template de perfil do usuário com o formulário (vazio ou preenchido)
-    return render(request, 'perfil_usuario.html', {'form': form})
+    return render(request, 'login/perfil_usuario.html', {'form': form})
 
 
 
@@ -124,7 +124,7 @@ def register(request):
         usuario_form = UsuarioForm()
 
     # Renderiza o template 'register.html' com os formulários
-    return render(request, 'register.html', {
+    return render(request, 'login/register.html', {
         'user_form': user_form,
         'usuario_form': usuario_form
     })
@@ -151,7 +151,7 @@ def login_view(request):
         form = UserLoginForm()
 
     # Renderiza o template 'login.html' com o formulario
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login/login.html', {'form': form})
 
 
 

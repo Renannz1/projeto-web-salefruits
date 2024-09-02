@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="{% static 'css/listar_produtos.css' %}">
 
     <!-- Cabeçalho da lista de produtos -->
-    <h2 class="titulo">Meus Produtos Adicionados</h2>  
-
+    <div class="h">
+    <h1 class="h">Meus Produtos Adicionados</h1>  
+    </div>      
     <!-- Formulário - filtro de produtos -->
     <form method="get" class="mb-4 p-3 border rounded">
         {{ form.as_p }}
@@ -45,7 +46,7 @@
         
         {% empty %}
             <div class="h">
-                <h1>Não há produtos</h1>
+                <h3>Não há produtos</h3>
             </div>
         {% endfor %}
         
