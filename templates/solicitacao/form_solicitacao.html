@@ -5,8 +5,8 @@
     {% csrf_token %}
     {{ form.as_p }}
     <input type="hidden" name="produto_id" value="{{ produto.id }}">
-    <button type="submit">Solicitar Produto</button>
+    <button class="btn btn-success" type="submit">Solicitar Produto</button>
 </form>
 
-<a href="{% url 'listar_solicitacoes' %}">Cancelar</a>
+<a href="{% url 'listar_solicitacoes' %}" class="btn btn-danger btn-sm">Cancelar</a>
 {% endblock %}

@@ -4,7 +4,7 @@
 <p>Você tem certeza que deseja excluir a solicitação de {{ solicitacao.produto.nome }}?</p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Confirmar Exclusão</button>
+    <button class="btn btn-success" type="submit">Confirmar Exclusão</button>
 </form>
-<a href="{% url 'listar_solicitacoes' %}">Cancelar</a>
+<a href="{% url 'listar_solicitacoes' %}" class="btn btn-danger btn-sm">Cancelar</a>
 {% endblock %}

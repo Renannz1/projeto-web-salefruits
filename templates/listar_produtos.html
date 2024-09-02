@@ -15,9 +15,9 @@
     <h2 class="titulo">Meus Produtos Adicionados</h2>  
 
     <!-- Formulário - filtro de produtos -->
-    <form method="get" class="form-filtro">
+    <form method="get" class="mb-4 p-3 border rounded">
         {{ form.as_p }}
-        <button type="submit">Filtrar</button>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
     </form>
 
     <!-- Linha horizontal para separar o cabeçalho dos produtos -->
@@ -38,9 +38,14 @@
 
 
                 <!-- Links para editar e excluir o produto -->
-                <a href="{% url 'editar_produto' produto.id %}">Editar</a> |
-                <a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+                <a href="{% url 'editar_produto' produto.id %}" class="btn btn-warning btn-sm">Editar</a> |
+                <a href="{% url 'excluir_produto' produto.id %}" class="btn btn-danger btn-sm">Excluir</a>
                 
+            </div>
+        
+        {% empty %}
+            <div class="h">
+                <h1>Não há produtos</h1>
             </div>
         {% endfor %}
         

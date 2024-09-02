@@ -11,16 +11,6 @@ from django.contrib.auth.models import User
 
 
 
-# ------- metodo para listar usuario -------
-def listar_usuarios(request):
-    # Obtém todos os usuários do banco de dados
-    usuarios = Usuario.objects.all()
-    
-    # Renderiza a página de listagem de usuários com todos os usuários
-    return render(request, 'listar_usuarios.html', {'usuarios': usuarios})
-
-
-
 
 # ------- metodo para editar usuario -------
 def editar_usuario(request, usuario_id):
@@ -40,7 +30,7 @@ def editar_usuario(request, usuario_id):
                 # Salva as alterações no perfil do usuário
                 form.save()
                 # Redireciona para a página de listagem de usuários após salvar
-                return redirect('listar_usuarios')
+                return redirect('listar_mural')
         else:
             # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
             form = UsuarioForm(instance=usuario)
@@ -65,7 +55,7 @@ def excluir_usuario(request, usuario_id):
             # Exclui o usuário do banco de dados
             usuario.delete()
             # Redireciona para a página de listagem de usuários após a exclusão
-            return redirect('listar_usuarios')
+            return redirect('listar_mural')
         # Renderiza a página de confirmação de exclusão com o usuário
         return render(request, 'confirmar_exclusao.html', {'usuario': usuario})
     else:
@@ -90,7 +80,7 @@ def perfil_usuario(request):
             # Salva as alterações no perfil do usuário
             form.save()
             # Redireciona para a página de listagem de usuários após salvar
-            return redirect('listar_usuarios')
+            return redirect('listar_mural')
     else:
         # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
         form = UsuarioForm(instance=usuario)

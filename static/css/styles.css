@@ -8,144 +8,294 @@
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
+
+
+ 
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
-/* Adicione ou modifique o seguinte código no seu arquivo styles.css */
-
-/* Define a cor de fundo da área de autenticação */
-#layoutAuthentication {
-  background-color: #05940c;
+/* Plano de fundo do corpo da página */
+:root {
+  --bs-blue: #0056b3; /* Azul marinho */
+  --bs-indigo: #6610f2; /* Roxo suave */
+  --bs-purple: #6f42c1; /* Roxo escuro */
+  --bs-pink: #d63384; /* Rosa forte */
+  --bs-red: #dc3545; /* Vermelho vivo */
+  --bs-orange: #fd7e14; /* Laranja vibrante */
+  --bs-yellow: #f7c6c7; /* Amarelo suave */
+  --bs-green: #a2d9a7; /* Verde claro */
+  --bs-teal: #20c997; /* Verde-azulado */
+  --bs-cyan: #17a2b8; /* Azul turquesa */
+  --bs-black: #000; /* Preto */
+  --bs-white: #fff; /* Branco */
+  --bs-gray: #95a5a6; /* Cinza claro */
+  --bs-gray-dark: #2c3e50; /* Cinza escuro */
+  --bs-gray-100: #f8f9fa; /* Cinza muito claro */
+  --bs-gray-200: #e9ecef; /* Cinza claro */
+  --bs-gray-300: #dee2e6; /* Cinza médio para bordas */
+  --bs-gray-400: #ced4da; /* Cinza para bordas */
+  --bs-gray-500: #adb5bd; /* Cinza para texto */
+  --bs-gray-600: #6c757d; /* Cinza para texto secundário */
+  --bs-gray-700: #495057; /* Cinza escuro para fundo */
+  --bs-gray-800: #343a40; /* Cinza muito escuro para fundo */
+  --bs-gray-900: #212529; /* Cinza quase preto para fundo */
+  --bs-primary: #a2d9a7; /* Verde claro */
+  --bs-secondary: #fd7e14; /* Laranja suave */
+  --bs-success: #a2d9a7; /* Verde claro */
+  --bs-info: #17a2b8; /* Azul turquesa */
+  --bs-warning: #f7c6c7; /* Amarelo suave */
+  --bs-danger: #dc3545; /* Vermelho vivo */
+  --bs-light: #f8f9fa; /* Fundo claro */
+  --bs-dark: #212529; /* Escuro para contraste */
+  --bs-primary-rgb: 162, 217, 167; /* Verde claro em RGB */
+  --bs-secondary-rgb: 253, 126, 20; /* Laranja vibrante em RGB */
+  --bs-success-rgb: 162, 217, 167; /* Verde sucesso em RGB */
+  --bs-info-rgb: 23, 162, 184; /* Azul info em RGB */
+  --bs-warning-rgb: 247, 198, 199; /* Amarelo aviso em RGB */
+  --bs-danger-rgb: 220, 53, 69; /* Vermelho perigo em RGB */
+  --bs-light-rgb: 248, 249, 250; /* Branco em RGB */
+  --bs-dark-rgb: 33, 37, 41; /* Preto em RGB */
+  --bs-white-rgb: 255, 255, 255; /* Branco em RGB */
+  --bs-black-rgb: 0, 0, 0; /* Preto em RGB */
+  --bs-body-color-rgb: 33, 37, 41; /* Cor do corpo em RGB */
+  --bs-body-bg-rgb: 255, 255, 255; /* Fundo do corpo em RGB */
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* Fontes sans-serif */
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* Fontes monoespaçadas */
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); /* Gradiente de fundo */
+  --bs-body-font-family: var(--bs-font-sans-serif); /* Fonte padrão do corpo */
+  --bs-body-font-size: 1rem; /* Tamanho da fonte do corpo */
+  --bs-body-font-weight: 400; /* Peso da fonte do corpo */
+  --bs-body-line-height: 1.5; /* Altura da linha do corpo */
+  --bs-body-color: #212529; /* Cor do texto do corpo */
+  --bs-body-bg: #ffffff; /* Cor do fundo do corpo */
+  --bs-border-width: 1px; /* Largura das bordas */
+  --bs-border-style: solid; /* Estilo das bordas */
+  --bs-border-color: #dee2e6; /* Cor das bordas */
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175); /* Cor das bordas translúcida */
+  --bs-border-radius: 0.375rem; /* Raio das bordas */
+  --bs-border-radius-sm: 0.25rem; /* Raio das bordas pequenas */
+  --bs-border-radius-lg: 0.5rem; /* Raio das bordas grandes */
+  --bs-border-radius-xl: 1rem; /* Raio das bordas extra grandes */
+  --bs-border-radius-2xl: 2rem; /* Raio das bordas duplamente grandes */
+  --bs-border-radius-pill: 50rem; /* Raio das bordas em formato de pílula */
+  --bs-link-color: #111111; /* Cor dos links */
+  --bs-link-hover-color: #85c1ae; /* Cor dos links ao passar o mouse */
+  --bs-code-color: #d63384; /* Cor do código */
+  --bs-highlight-bg: #fff3cd; /* Cor de fundo para destaques */
 }
 
-/* Melhora a aparência dos campos do formulário */
-.card-body {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 0.5rem;
+.form-filtro {
+  display: flex;
+  justify-content: space-between; 
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+
 }
 
-.form-control {
-  border: 1px solid #ced4da;
-  border-radius: 0.375rem;
-  padding: 0.75rem 1.25rem;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-}
-
-.card-header h3 {
-  font-size: 1.75rem;
-  color: #343a40;
-}
-
-.card-footer {
-  background-color: #26b809;
-}
-
-.btn-primary {
+/* Estilo do botão de filtro */
+.form-filtro button {
   background-color: #007bff;
-  border-color: #007bff;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.375rem;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-filtro button:hover {
+  background-color: #0056b3;
+}
+
+.h{
+  color: #ffffff;
+
+}
+
+
+.container h2 {
+  font-size: 2.5rem; /* Tamanho da fonte */
+  color: #fff; /* Cor do texto */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  font-weight: bold; /* Negrito */
+  background-image: linear-gradient(135deg, #007bff, #00bcd4), url('../img/background-h2.jpg'); /* Gradiente e imagem de fundo */
+  background-size: cover; /* Faz com que o fundo cubra todo o espaço */
+  background-position: center; /* Centraliza o fundo */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  padding: 20px; /* Espaço ao redor do texto */
+  border-radius: 8px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+}
+
+
+.container h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #007bff; /* Cor da linha de destaque */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container h2:hover::before {
+  transform: translateX(0);
+}
+
+/* Estilo para a tabela */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Cabeçalho da tabela */
+.table-dark {
+  background-color: #343a40; /* Cor de fundo escura */
+  color: #ffffff; /* Cor do texto clara para contraste */
+}
+
+/* Linhas da tabela */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2; /* Cor de fundo das linhas ímpares */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #ffffff; /* Cor de fundo das linhas pares */
+}
+
+/* Borda da tabela */
+.table-bordered th, .table-bordered td {
+  border: 1px solid #dee2e6; /* Cor da borda */
+}
+
+/* Células da tabela */
+.table td, .table th {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Links dos botões */
+.btn-info {
+  background-color: #17a2b8; /* Cor de fundo do botão de detalhes */
+  border-color: #17a2b8; /* Cor da borda do botão */
+}
+
+.btn-info:hover {
+  background-color: #138496; /* Cor de fundo ao passar o mouse */
+  border-color: #117a8b; /* Cor da borda ao passar o mouse */
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Cor de fundo do botão de editar */
+  border-color: #ffc107; /* Cor da borda do botão */
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Cor de fundo ao passar o mouse */
+  border-color: #d39e00; /* Cor da borda ao passar o mouse */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Cor de fundo do botão de excluir */
+  border-color: #dc3545; /* Cor da borda do botão */
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Cor de fundo ao passar o mouse */
+  border-color: #bd2130; /* Cor da borda ao passar o mouse */
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url(../img/i.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bs-gray-00);
+  background-attachment: fixed;
+  color: var(--bs-body-color);
+}
+
+
+/* Estilo das cards */
+.card {
+  border-radius: var(--bs-border-radius); /* Bordas arredondadas dos cards */
+  border: 1px solid var(--bs-gray-300); /* Cor das bordas dos cards */
+}
+
+/* Estilo dos botões */
+.btn-primary {
+  background-color: var(--bs-primary); /* Cor de fundo do botão primário */
+  border-color: var(--bs-primary); /* Cor da borda do botão primário */
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004b87;
+  background-color: var(--bs-success); /* Cor de fundo do botão primário ao passar o mouse */
+  border-color: var(--bs-success); /* Cor da borda do botão primário ao passar o mouse */
 }
 
-h2 {
-  color: #343a40;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.btn-success {
+  background-color: var(--bs-success); /* Cor de fundo do botão de sucesso */
+  border-color: var(--bs-success); /* Cor da borda do botão de sucesso */
 }
 
-hr.my-4 {
-  border-top: 1px solid #0aaa12;
+.btn-success:hover {
+  background-color: var(--bs-success-rgb); /* Cor de fundo do botão de sucesso ao passar o mouse */
+  border-color: var(--bs-success-rgb); /* Cor da borda do botão de sucesso ao passar o mouse */
 }
 
-.d-grid {
-  display: grid;
-  gap: 0.5rem;
+.btn-info {
+  background-color: var(--bs-info); /* Cor de fundo do botão de informação */
+  border-color: var(--bs-info); /* Cor da borda do botão de informação */
 }
 
-.small a {
-  color: #007bff;
+.btn-info:hover {
+  background-color: var(--bs-info-rgb); /* Cor de fundo do botão de informação ao passar o mouse */
+  border-color: var(--bs-info-rgb); /* Cor da borda do botão de informação ao passar o mouse */
 }
 
-.small a:hover {
-  color: #0056b3;
+/* Estilo do formulário */
+form {
+  border: 1px solid var(--bs-gray-300); /* Cor das bordas do formulário */
+  border-radius: var(--bs-border-radius); /* Bordas arredondadas do formulário */
+  padding: 1rem; /* Espaçamento interno do formulário */
+  background-color: var(--bs-white); /* Cor do fundo do formulário */
+}
+
+/* Estilo do cabeçalho e rodapé */
+header, footer {
+  background-color: var(--bs-white); /* Cor do fundo do cabeçalho e rodapé */
+  color: var(--bs-body-color); /* Cor do texto do cabeçalho e rodapé */
+}
+
+/* Adicional para o rodapé */
+footer p {
+  margin: 0; /* Remove a margem dos parágrafos no rodapé */
+}
+
+/* Links */
+a {
+  color: var(--bs-link-color); /* Cor dos links */
+}
+
+a:hover {
+  color: var(--bs-link-hover-color); /* Cor dos links ao passar o mouse */
 }
 
 
 
-:root {
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-black: #000;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-gray-100: #f8f9fa;
-  --bs-gray-200: #e9ecef;
-  --bs-gray-300: #dee2e6;
-  --bs-gray-400: #ced4da;
-  --bs-gray-500: #adb5bd;
-  --bs-gray-600: #6c757d;
-  --bs-gray-700: #495057;
-  --bs-gray-800: #343a40;
-  --bs-gray-900: #212529;
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
-  --bs-primary-rgb: 13, 110, 253;
-  --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 25, 135, 84;
-  --bs-info-rgb: 13, 202, 240;
-  --bs-warning-rgb: 255, 193, 7;
-  --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
-  --bs-white-rgb: 255, 255, 255;
-  --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
-  --bs-border-width: 1px;
-  --bs-border-style: solid;
-  --bs-border-color: #dee2e6;
-  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-  --bs-border-radius: 0.375rem;
-  --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
-  --bs-border-radius-xl: 1rem;
-  --bs-border-radius-2xl: 2rem;
-  --bs-border-radius-pill: 50rem;
-  --bs-link-color: #0d6efd;
-  --bs-link-hover-color: #0a58ca;
-  --bs-code-color: #d63384;
-  --bs-highlight-bg: #fff3cd;
-}
 
 *,
 *::before,
@@ -160,6 +310,10 @@ hr.my-4 {
 }
 
 body {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -171,6 +325,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 
 hr {
   margin: 1rem 0;
@@ -2963,21 +3118,22 @@ textarea.form-control-lg {
 }
 
 .btn-success {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #198754;
-  --bs-btn-border-color: #198754;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #157347;
-  --bs-btn-hover-border-color: #146c43;
-  --bs-btn-focus-shadow-rgb: 60, 153, 110;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #146c43;
-  --bs-btn-active-border-color: #13653f;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #198754;
-  --bs-btn-disabled-border-color: #198754;
+  --bs-btn-color: #fff; /* Cor do texto do botão */
+  --bs-btn-bg: #0d6efd; /* Cor de fundo do botão */
+  --bs-btn-border-color: #0d6efd; /* Cor da borda do botão */
+  --bs-btn-hover-color: #fff; /* Cor do texto do botão ao passar o mouse */
+  --bs-btn-hover-bg: #0b5ed7; /* Cor de fundo do botão ao passar o mouse */
+  --bs-btn-hover-border-color: #0a58ca; /* Cor da borda do botão ao passar o mouse */
+  --bs-btn-focus-shadow-rgb: 49, 132, 253; /* Cor da sombra do botão ao ganhar foco */
+  --bs-btn-active-color: #fff; /* Cor do texto do botão quando ativado */
+  --bs-btn-active-bg: #0a58ca; /* Cor de fundo do botão quando ativado */
+  --bs-btn-active-border-color: #0a53be; /* Cor da borda do botão quando ativado */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Sombra do botão quando ativado */
+  --bs-btn-disabled-color: #fff; /* Cor do texto do botão quando desativado */
+  --bs-btn-disabled-bg: #0d6efd; /* Cor de fundo do botão quando desativado */
+  --bs-btn-disabled-border-color: #0d6efd; /* Cor da borda do botão quando desativado */
 }
+
 
 .btn-info {
   --bs-btn-color: #000;
@@ -6741,7 +6897,7 @@ textarea.form-control-lg {
 
 .text-bg-primary {
   color: #fff !important;
-  background-color: RGBA(13, 110, 253, var(--bs-bg-opacity, 1)) !important;
+  background-color: rgb(183 255 195) var(--bs-bg-opacity, 1) !important;
 }
 
 .text-bg-secondary {

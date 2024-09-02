@@ -1340,17 +1340,8 @@
         "kind": 5,
         "importPath": "usuarios.urls",
         "description": "usuarios.urls",
-        "peekOfCode": "urlpatterns = [\n    path('listar/', views.listar_usuarios, name='listar_usuarios'),\n    path('editar/<int:usuario_id>/', views.editar_usuario, name='editar_usuario'),\n    path('excluir/<int:usuario_id>/', views.excluir_usuario, name='excluir_usuario'),\n    path('perfil/', views.perfil_usuario, name='perfil_usuario'),\n    path('register/', register, name='register'),\n    path('login/', login_view, name='login'),\n    path('logout/', custom_logout, name='logout'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('editar/<int:usuario_id>/', views.editar_usuario, name='editar_usuario'),\n    path('excluir/<int:usuario_id>/', views.excluir_usuario, name='excluir_usuario'),\n    path('perfil/', views.perfil_usuario, name='perfil_usuario'),\n    path('register/', register, name='register'),\n    path('login/', login_view, name='login'),\n    path('logout/', custom_logout, name='logout'),\n]",
         "detail": "usuarios.urls",
-        "documentation": {}
-    },
-    {
-        "label": "listar_usuarios",
-        "kind": 2,
-        "importPath": "usuarios.views",
-        "description": "usuarios.views",
-        "peekOfCode": "def listar_usuarios(request):\n    # Obtém todos os usuários do banco de dados\n    usuarios = Usuario.objects.all()\n    # Renderiza a página de listagem de usuários com todos os usuários\n    return render(request, 'listar_usuarios.html', {'usuarios': usuarios})\n# ------- metodo para editar usuario -------\ndef editar_usuario(request, usuario_id):\n    # Busca o objeto Usuario correspondente ao usuario_id no banco de dados.\n    # Se não encontrar, retorna uma página 404 (não encontrado).\n    usuario = get_object_or_404(Usuario, id=usuario_id)",
-        "detail": "usuarios.views",
         "documentation": {}
     },
     {
