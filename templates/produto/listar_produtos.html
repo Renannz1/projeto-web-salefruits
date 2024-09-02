@@ -31,7 +31,15 @@
     <div class="produto-grid">
         <!-- Loop através de cada produto na lista -->
         {% for produto in produtos %}
-            <div class="produto-card">
+            <div class="produto-card"> 
+
+                <!-- Loop através de cada produto na lista -->
+                <div class="status_produto"> 
+                    <p>Status: {{ produto.get_status_display }}</p>
+                    <hr class="linha-separadora">
+                </div>
+
+                
                 <h3>{{ produto.nome }}</h3>
                 <p>{{ produto.descricao }}</p>
                 <p>Preço da Caixa: R$ {{ produto.preco }}</p>

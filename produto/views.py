@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Produto
+from django.contrib.admin.views.decorators import staff_member_required
+
+
+from .models import Produto, StatusProduto
 from .forms import FiltroProdutoForm, ProdutoForm
 
 
@@ -93,3 +96,27 @@ def detalhar_produto(request, id):
     produto = get_object_or_404(Produto, id=id)
     # Renderiza o template 'detalhar_produto.html' com o contexto do produto
     return render(request, 'produto/detalhar_produto.html', {'produto': produto})
+
+
+
+
+## ======= METODOS PARA STAFF =========
+@staff_member_required
+def aprovar_produtos(request):
+    # Obtendo apenas os produtos que têm o status pendente no banco de dados
+    produtos_pendentes = Produto.objects.filter(status=StatusProduto.PENDENTE) 
+
+    if request.method == 'POST':
+        produto_id = request.POST.get('produto_id')
+        acao = request.POST.get('acao')
+        produto = get_object_or_404(Produto, id=produto_id)
+        
+        if acao == 'aprovar':
+            produto.status = StatusProduto.APROVADO
+        elif acao == 'rejeitar':
+            produto.status = StatusProduto.REJEITADO
+        
+        produto.save()
+        return redirect('aprovar_produtos')
+
+    return render(request, 'produto/aprovar_produtos.html', {'produtos': produtos_pendentes})

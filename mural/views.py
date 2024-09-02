@@ -1,15 +1,16 @@
 from django.shortcuts import render
 from produto.forms import FiltroProdutoForm
-from produto.models import Produto
+from produto.models import Produto, StatusProduto
 
 
 
-# Função para listar todos os produtos adicionados por todos os usuários
+# Função para listar todos os produtos aprovados adicionados por todos os usuários
 def listar_mural(request):
     # Inicializa o formulário de filtro com os dados de GET da requisição
     form = FiltroProdutoForm(request.GET)
-    # Recupera todos os produtos do banco de dados
-    produtos = Produto.objects.all()
+    # Recupera todos os produtos aprovados do banco de dados
+    produtos = Produto.objects.filter(status=StatusProduto.APROVADO)
+
 
     # Verifica se o formulário foi enviado e é válido
     if form.is_valid():
@@ -23,5 +24,3 @@ def listar_mural(request):
     return render(request, 'mural/listar_mural.html', {'produtos': produtos, 'form': form})
 
 
-def home(request):
-    return render(request, 'mural/listar_mural.html')
