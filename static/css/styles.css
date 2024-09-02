@@ -10,6 +10,74 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* Adicione ou modifique o seguinte código no seu arquivo styles.css */
+
+/* Define a cor de fundo da área de autenticação */
+#layoutAuthentication {
+  background-color: #05940c;
+}
+
+/* Melhora a aparência dos campos do formulário */
+.card-body {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.25rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.card-header h3 {
+  font-size: 1.75rem;
+  color: #343a40;
+}
+
+.card-footer {
+  background-color: #26b809;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004b87;
+}
+
+h2 {
+  color: #343a40;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+hr.my-4 {
+  border-top: 1px solid #0aaa12;
+}
+
+.d-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.small a {
+  color: #007bff;
+}
+
+.small a:hover {
+  color: #0056b3;
+}
+
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

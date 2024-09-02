@@ -24,4 +24,4 @@ def listar_mural(request):
 
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'listar_mural.html')

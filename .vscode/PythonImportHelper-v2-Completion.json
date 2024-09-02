@@ -49,35 +49,19 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -106,14 +90,6 @@
     },
     {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -153,11 +129,115 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
@@ -238,6 +318,22 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -313,6 +409,14 @@
         "documentation": {}
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -331,6 +435,30 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -410,6 +538,22 @@
         "documentation": {}
     },
     {
+        "label": "Produto",
+        "importPath": "produto.models",
+        "description": "produto.models",
+        "isExtraImport": true,
+        "detail": "produto.models",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -455,6 +599,30 @@
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
         "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -565,6 +733,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "chat.migrations.0002_alter_room_messages",
+        "description": "chat.migrations.0002_alter_room_messages",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('chat', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='room',\n            name='messages',\n            field=models.ManyToManyField(blank=True, to='chat.message'),\n        ),",
+        "detail": "chat.migrations.0002_alter_room_messages",
+        "documentation": {}
+    },
+    {
         "label": "ChatConfig",
         "kind": 6,
         "importPath": "chat.apps",
@@ -650,7 +827,7 @@
         "kind": 5,
         "importPath": "mural.urls",
         "description": "mural.urls",
-        "peekOfCode": "urlpatterns = [\n    path('listar/', views.listar_mural, name='listar_mural'),\n    path('', views.home, name='home'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.listar_mural, name='listar_mural'),\n    #path('', views.home, name='home'),\n]",
         "detail": "mural.urls",
         "documentation": {}
     },
@@ -668,7 +845,7 @@
         "kind": 2,
         "importPath": "mural.views",
         "description": "mural.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'index.html')",
+        "peekOfCode": "def home(request):\n    return render(request, 'listar_mural.html')",
         "detail": "mural.views",
         "documentation": {}
     },
@@ -713,7 +890,7 @@
         "kind": 6,
         "importPath": "produto.forms",
         "description": "produto.forms",
-        "peekOfCode": "class ProdutoForm(forms.ModelForm):\n    class Meta:\n        model = Produto\n        fields = ['nome', 'descricao', 'preco', 'quantidade', 'categoria'] \n    # Personalizando os campos do formulario\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['preco'].label = 'Preço da Caixa'\n        self.fields['quantidade'].label = 'Quantidade de Caixas'\n# filtro para categorias",
+        "peekOfCode": "class ProdutoForm(forms.ModelForm):\n    class Meta:\n        model = Produto\n        fields = ['nome', 'descricao', 'preco', 'quantidade', 'categoria']\n        widgets = {\n            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome do Produto'}),\n            'descricao': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descrição do Produto', 'rows': 3}),\n            'preco': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Preço da Caixa'}),\n            'quantidade': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Quantidade de Caixas'}),\n            'categoria': forms.Select(attrs={'class': 'form-control'}),",
         "detail": "produto.forms",
         "documentation": {}
     },
@@ -722,7 +899,7 @@
         "kind": 6,
         "importPath": "produto.forms",
         "description": "produto.forms",
-        "peekOfCode": "class FiltroProdutoForm(forms.Form):\n    CATEGORIAS = (\n        ('', 'Todas'),\n        ('Fruta', 'Fruta'),\n        ('Legume', 'Legume'),\n        ('Verdura', 'Verdura'),\n    )\n    categoria = forms.ChoiceField(choices=CATEGORIAS, required=False, label='Categoria')",
+        "peekOfCode": "class FiltroProdutoForm(forms.Form):\n    CATEGORIAS = (\n        ('', 'Todas'),\n        ('Fruta', 'Fruta'),\n        ('Legume', 'Legume'),\n        ('Verdura', 'Verdura'),\n    )\n    categoria = forms.ChoiceField(\n        choices=CATEGORIAS,\n        required=False,",
         "detail": "produto.forms",
         "documentation": {}
     },
@@ -794,7 +971,7 @@
         "kind": 2,
         "importPath": "produto.views",
         "description": "produto.views",
-        "peekOfCode": "def detalhar_produto(request, id):\n    # Obtém o produto com base no ID fornecido\n    produto = get_object_or_404(Produto, id=id)\n    # Renderiza o template 'detalhar_produto.html' com o contexto do produto\n    return render(request, 'produtos/detalhar_produto.html', {'produto': produto})",
+        "peekOfCode": "def detalhar_produto(request, id):\n    # Obtém o produto com base no ID fornecido\n    produto = get_object_or_404(Produto, id=id)\n    # Renderiza o template 'detalhar_produto.html' com o contexto do produto\n    return render(request, 'detalhar_produto.html', {'produto': produto})",
         "detail": "produto.views",
         "documentation": {}
     },
@@ -992,7 +1169,7 @@
         "kind": 5,
         "importPath": "salefruits.urls",
         "description": "salefruits.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"usuarios/\", include(\"usuarios.urls\")),\n    path('produtos/', include('produto.urls')), \n    path('mural/', include('mural.urls')),\n    path('chat/', include('chat.urls')),\n    path('', include('mural.urls')),\n   #     path('register/', include('usuarios.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"usuarios/\", include(\"usuarios.urls\")),\n    path('produtos/', include('produto.urls')), \n    path('mural/', include('mural.urls')),\n    path('chat/', include('chat.urls')),\n    path('solicitacao/', include('solicitacao.urls')),\n    path('', include('mural.urls')),\n]",
         "detail": "salefruits.urls",
         "documentation": {}
     },
@@ -1003,6 +1180,105 @@
         "description": "salefruits.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "salefruits.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "solicitacao.migrations.0001_initial",
+        "description": "solicitacao.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('produto', '0003_produto_categoria'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Solicitacao',\n            fields=[",
+        "detail": "solicitacao.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "solicitacao.migrations.0002_notificacao",
+        "description": "solicitacao.migrations.0002_notificacao",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('solicitacao', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Notificacao',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "solicitacao.migrations.0002_notificacao",
+        "documentation": {}
+    },
+    {
+        "label": "SolicitacaoConfig",
+        "kind": 6,
+        "importPath": "solicitacao.apps",
+        "description": "solicitacao.apps",
+        "peekOfCode": "class SolicitacaoConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'solicitacao'",
+        "detail": "solicitacao.apps",
+        "documentation": {}
+    },
+    {
+        "label": "SolicitarProdutoForm",
+        "kind": 6,
+        "importPath": "solicitacao.forms",
+        "description": "solicitacao.forms",
+        "peekOfCode": "class SolicitarProdutoForm(forms.ModelForm):\n    class Meta:\n        model = Solicitacao\n        fields = ['quantidade']\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['quantidade'].label = 'Quantidade'\n    def clean_quantidade(self):\n        quantidade = self.cleaned_data['quantidade']\n        if quantidade <= 0:",
+        "detail": "solicitacao.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Solicitacao",
+        "kind": 6,
+        "importPath": "solicitacao.models",
+        "description": "solicitacao.models",
+        "peekOfCode": "class Solicitacao(models.Model):\n    comprador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_feitas')\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_recebidas')\n    quantidade = models.PositiveIntegerField()\n    data_solicitacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.comprador.username} solicitou {self.quantidade} de {self.produto.nome}\"",
+        "detail": "solicitacao.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "solicitacao.urls",
+        "description": "solicitacao.urls",
+        "peekOfCode": "urlpatterns = [\n    path('solicitacoes/', listar_solicitacoes, name='listar_solicitacoes'),\n    path('solicitacao/<int:id>/', detalhar_solicitacao, name='detalhar_solicitacao'),\n    path('solicitacao/adicionar/', adicionar_solicitacao, name='adicionar_solicitacao'),\n    path('solicitacao/<int:id>/editar/', editar_solicitacao, name='editar_solicitacao'),\n    path('solicitacao/<int:id>/excluir/', excluir_solicitacao, name='excluir_solicitacao'),\n]",
+        "detail": "solicitacao.urls",
+        "documentation": {}
+    },
+    {
+        "label": "listar_solicitacoes",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def listar_solicitacoes(request):\n    solicitacoes = Solicitacao.objects.filter(comprador=request.user)\n    return render(request, 'solicitacao/listar_solicitacoes.html', {'solicitacoes': solicitacoes})\n# ------- Método para visualizar detalhes de uma solicitação -------\n@login_required\ndef detalhar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})\n# ------- Método para adicionar uma nova solicitação -------\n@login_required",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "detalhar_solicitacao",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def detalhar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})\n# ------- Método para adicionar uma nova solicitação -------\n@login_required\ndef adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "adicionar_solicitacao",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:\n            return redirect('listar_produtos')  # Redireciona caso não tenha produto_id\n        produto = get_object_or_404(Produto, id=produto_id)\n        if form.is_valid():\n            quantidade = form.cleaned_data['quantidade']\n            solicitacao = Solicitacao.objects.create(",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "editar_solicitacao",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def editar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST, instance=solicitacao)\n        if form.is_valid():\n            form.save()\n            return redirect('listar_solicitacoes')\n    else:\n        form = SolicitarProdutoForm(instance=solicitacao)\n    return render(request, 'solicitacao/form_solicitacao.html', {'form': form})",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "excluir_solicitacao",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def excluir_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    if request.method == 'POST':\n        solicitacao.delete()\n        return redirect('listar_solicitacoes')\n    return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})",
+        "detail": "solicitacao.views",
         "documentation": {}
     },
     {
@@ -1028,7 +1304,7 @@
         "kind": 6,
         "importPath": "usuarios.forms",
         "description": "usuarios.forms",
-        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n     # Essa classe herda de AuthenticationForm, aproveitando a lógica de autenticação padrão do Django.\n    # Personalizando os campos 'username' e 'password'.\n    username = forms.CharField(\n        label=\"Nome de usuário\",\n        widget=forms.TextInput(attrs={\"class\": \"form-control\"})\n    )\n    password = forms.CharField(\n        label=\"Senha\",\n        widget=forms.PasswordInput(attrs={\"class\": \"form-control\"})",
+        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n    username = forms.CharField(\n        label=\"Nome de usuário\",\n        widget=forms.TextInput(attrs={\"class\": \"form-control\"})\n    )\n    password = forms.CharField(\n        label=\"Senha\",\n        widget=forms.PasswordInput(attrs={\"class\": \"form-control\"})\n    )\nclass UserRegisterForm(forms.ModelForm):",
         "detail": "usuarios.forms",
         "documentation": {}
     },
@@ -1037,7 +1313,7 @@
         "kind": 6,
         "importPath": "usuarios.forms",
         "description": "usuarios.forms",
-        "peekOfCode": "class UserRegisterForm(forms.ModelForm):\n    password = forms.CharField(widget=forms.PasswordInput)\n    confirm_password = forms.CharField(widget=forms.PasswordInput)\n    class Meta:\n        model = User\n        fields = ['username', 'email', 'password']\n    # Método que faz a validação da senha\n    def clean(self):\n        # Chama o método de limpeza da classe base ModelForm\n        cleaned_data = super().clean()",
+        "peekOfCode": "class UserRegisterForm(forms.ModelForm):\n    password = forms.CharField(\n        label=\"Senha\",\n        widget=forms.PasswordInput(attrs={\"class\": \"form-control\"})\n    )\n    confirm_password = forms.CharField(\n        label=\"Confirmar Senha\",\n        widget=forms.PasswordInput(attrs={\"class\": \"form-control\"})\n    )\n    class Meta:",
         "detail": "usuarios.forms",
         "documentation": {}
     },
@@ -1046,7 +1322,7 @@
         "kind": 6,
         "importPath": "usuarios.forms",
         "description": "usuarios.forms",
-        "peekOfCode": "class UsuarioForm(forms.ModelForm):\n    class Meta:\n        model = Usuario\n        fields = ['nome', 'cpf', 'telefone', 'endereco', 'descricao']",
+        "peekOfCode": "class UsuarioForm(forms.ModelForm):\n    class Meta:\n        model = Usuario\n        fields = ['nome', 'cpf', 'telefone', 'endereco', 'descricao']\n        widgets = {\n            'nome': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'cpf': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'telefone': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'endereco': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'descricao': forms.TextInput(attrs={\"class\": \"form-control\"}),",
         "detail": "usuarios.forms",
         "documentation": {}
     },
@@ -1127,7 +1403,7 @@
         "kind": 2,
         "importPath": "usuarios.views",
         "description": "usuarios.views",
-        "peekOfCode": "def custom_logout(request):\n    logout(request)\n    return redirect('listar_usuarios')",
+        "peekOfCode": "def custom_logout(request):\n    logout(request)\n    return redirect('login')",
         "detail": "usuarios.views",
         "documentation": {}
     },

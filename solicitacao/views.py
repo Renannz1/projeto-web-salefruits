@@ -35,11 +35,6 @@ def adicionar_solicitacao(request):
                 vendedor=produto.usuario,
                 quantidade=quantidade
             )
-            # Criar notificação para o vendedor
-            Notificacao.objects.create(
-                vendedor=produto.usuario,
-                solicitacao=solicitacao
-            )
             return redirect('listar_solicitacoes')
     else:
         produto_id = request.GET.get('produto_id')
@@ -50,7 +45,6 @@ def adicionar_solicitacao(request):
         form = SolicitarProdutoForm()
     
     return render(request, 'solicitacao/form_solicitacao.html', {'form': form, 'produto': produto})
-
 
 # ------- Método para editar uma solicitação -------
 @login_required
@@ -73,23 +67,3 @@ def excluir_solicitacao(request, id):
         solicitacao.delete()
         return redirect('listar_solicitacoes')
     return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})
-
-@login_required
-def listar_notificacoes(request):
-    notificacoes = Notificacao.objects.filter(vendedor=request.user)
-    return render(request, 'notificacao/listar_notificacoes.html', {'notificacoes': notificacoes})
-
-@login_required
-def responder_solicitacao(request, id, resposta):
-    notificacao = get_object_or_404(Notificacao, id=id, vendedor=request.user)
-    if resposta == 'aceitar':
-        notificacao.aceita = True
-    elif resposta == 'recusar':
-        notificacao.aceita = False
-    notificacao.lida = True
-    notificacao.save()
-    
-    
-    
-    # Aqui você pode adicionar mais lógica, como enviar um email ao comprador
-    return redirect('listar_notificacoes')

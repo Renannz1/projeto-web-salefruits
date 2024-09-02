@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UsuarioForm, UserLoginForm
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth import logout
@@ -75,6 +76,7 @@ def excluir_usuario(request, usuario_id):
 
 
 # ------- metodo para exibir o perfil do usuario -------
+@login_required
 def perfil_usuario(request):
     # Obtém o perfil do usuário logado
     usuario = request.user.usuario
@@ -166,4 +168,4 @@ def login_view(request):
 # ------- metodo para fazer logout e redirecionar o usuario -------
 def custom_logout(request):
     logout(request)
-    return redirect('listar_usuarios')
+    return redirect('login')

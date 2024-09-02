@@ -22,7 +22,7 @@ def listar_produtos(request):
         if categoria:
             produtos = produtos.filter(categoria=categoria)
     
-    return render(request, 'produto/listar_produtos.html', {'produtos': produtos, 'form': form})
+    return render(request, 'listar_produtos.html', {'produtos': produtos, 'form': form})
 
 # ------- metodo para adicionar um novo produto que sera vinculado ao usuario que está logado -------
 @login_required
@@ -47,7 +47,7 @@ def adicionar_produto(request):
         form = ProdutoForm()
 
     # Renderiza o template com o formulário de produto
-    return render(request, 'produto/form_produto.html', {'form': form})
+    return render(request, 'form_produto.html', {'form': form})
 
 # ------- metodo para editar o produto -------
 @login_required
@@ -70,7 +70,7 @@ def editar_produto(request, id):
         form = ProdutoForm(instance=produto)
         
     # Renderiza o template com o formulário de produto
-    return render(request, 'produto/form_produto.html', {'form': form})
+    return render(request, 'form_produto.html', {'form': form})
 
 # ------- metodo para  excluir um produto existente -------
 @login_required
@@ -84,7 +84,7 @@ def excluir_produto(request, id):
         # Redireciona para a lista de produtos
         return redirect('listar_produtos')
     # Renderiza o template de confirmação de exclusão com o produto
-    return render(request, 'produto/confirmar_exclusao.html', {'produto': produto})
+    return render(request, 'confirmar_exclusao.html', {'produto': produto})
 
 # ------- metodo para visualizar todas as informações de um produto -------
 @login_required
@@ -92,4 +92,4 @@ def detalhar_produto(request, id):
     # Obtém o produto com base no ID fornecido
     produto = get_object_or_404(Produto, id=id)
     # Renderiza o template 'detalhar_produto.html' com o contexto do produto
-    return render(request, 'produto/detalhar_produto.html', {'produto': produto})
+    return render(request, 'detalhar_produto.html', {'produto': produto})
