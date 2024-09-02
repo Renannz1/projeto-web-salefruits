@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Aprovar Produtos
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/aprovar_produto.css' %}">
+
+    <h2 class="titulo">Produtos Pendentes de Aprovação</h2>
+    
+    <table class="tabela-produtos">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Usuário</th>
+                <th>Preço</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.nome }}</td>
+                    <td>{{ produto.usuario.username }}</td>
+                    <td>R$ {{ produto.preco }}</td>
+                    <td>{{ produto.get_status_display }}</td>
+                    <td>
+                        <form method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="produto_id" value="{{ produto.id }}">
+                            <button type="submit" name="acao" value="aprovar" class="btn-acao aprovar">Aprovar</button>
+                            <button type="submit" name="acao" value="rejeitar" class="btn-acao rejeitar">Rejeitar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5" class="nenhum-produto">Nenhum produto pendente.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

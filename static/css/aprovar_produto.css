@@ -1,0 +1,67 @@
+/* Aprovar produtos CSS */
+
+.titulo {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.tabela-produtos th, .tabela-produtos td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela-produtos th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tabela-produtos tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabela-produtos tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-acao {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.aprovar {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+}
+
+.aprovar:hover {
+    background-color: #218838;
+}
+
+.rejeitar {
+    background-color: #dc3545; /* Vermelho */
+    color: #fff;
+}
+
+.rejeitar:hover {
+    background-color: #c82333;
+}
+
+.nenhum-produto {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+
