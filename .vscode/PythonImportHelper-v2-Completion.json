@@ -161,6 +161,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -218,6 +250,22 @@
     },
     {
         "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -538,6 +586,14 @@
         "documentation": {}
     },
     {
+        "label": "StatusProduto",
+        "importPath": "produto.models",
+        "description": "produto.models",
+        "isExtraImport": true,
+        "detail": "produto.models",
+        "documentation": {}
+    },
+    {
         "label": "Produto",
         "importPath": "produto.models",
         "description": "produto.models",
@@ -631,6 +687,14 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "staff_member_required",
+        "importPath": "django.contrib.admin.views.decorators",
+        "description": "django.contrib.admin.views.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.admin.views.decorators",
         "documentation": {}
     },
     {
@@ -836,16 +900,7 @@
         "kind": 2,
         "importPath": "mural.views",
         "description": "mural.views",
-        "peekOfCode": "def listar_mural(request):\n    # Inicializa o formulário de filtro com os dados de GET da requisição\n    form = FiltroProdutoForm(request.GET)\n    # Recupera todos os produtos do banco de dados\n    produtos = Produto.objects.all()\n    # Verifica se o formulário foi enviado e é válido\n    if form.is_valid():\n        # Recupera a categoria selecionada no formulário\n        categoria = form.cleaned_data.get('categoria')\n        if categoria:",
-        "detail": "mural.views",
-        "documentation": {}
-    },
-    {
-        "label": "home",
-        "kind": 2,
-        "importPath": "mural.views",
-        "description": "mural.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'mural/listar_mural.html')",
+        "peekOfCode": "def listar_mural(request):\n    # Inicializa o formulário de filtro com os dados de GET da requisição\n    form = FiltroProdutoForm(request.GET)\n    # Recupera todos os produtos aprovados do banco de dados\n    produtos = Produto.objects.filter(status=StatusProduto.APROVADO)\n    # Verifica se o formulário foi enviado e é válido\n    if form.is_valid():\n        # Recupera a categoria selecionada no formulário\n        categoria = form.cleaned_data.get('categoria')\n        if categoria:",
         "detail": "mural.views",
         "documentation": {}
     },
@@ -874,6 +929,15 @@
         "description": "produto.migrations.0003_produto_categoria",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('produto', '0002_produto_quantidade'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='produto',\n            name='categoria',\n            field=models.CharField(choices=[('Fruta', 'Fruta'), ('Legume', 'Legume'), ('Verdura', 'Verdura')], default='Fruta', max_length=10),\n        ),",
         "detail": "produto.migrations.0003_produto_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "produto.migrations.0004_produto_status",
+        "description": "produto.migrations.0004_produto_status",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('produto', '0003_produto_categoria'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='produto',\n            name='status',\n            field=models.CharField(choices=[('Pendente', 'Pendente'), ('Aprovado', 'Aprovado'), ('Rejeitado', 'Rejeitado')], default='Pendente', max_length=10),\n        ),",
+        "detail": "produto.migrations.0004_produto_status",
         "documentation": {}
     },
     {
@@ -908,7 +972,16 @@
         "kind": 6,
         "importPath": "produto.models",
         "description": "produto.models",
-        "peekOfCode": "class Categoria(models.TextChoices):\n    FRUTA = 'Fruta', 'Fruta'\n    LEGUME = 'Legume', 'Legume'\n    VERDURA = 'Verdura', 'Verdura'\nclass Produto(models.Model):\n    nome = models.CharField(max_length=100)\n    descricao = models.TextField()\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='produtos')\n    postado_em = models.DateTimeField(auto_now_add=True)",
+        "peekOfCode": "class Categoria(models.TextChoices):\n    FRUTA = 'Fruta', 'Fruta'\n    LEGUME = 'Legume', 'Legume'\n    VERDURA = 'Verdura', 'Verdura'\nclass StatusProduto(models.TextChoices):\n    PENDENTE = 'Pendente', 'Pendente'\n    APROVADO = 'Aprovado', 'Aprovado'\n    REJEITADO = 'Rejeitado', 'Rejeitado'\nclass Produto(models.Model):\n    nome = models.CharField(max_length=100)",
+        "detail": "produto.models",
+        "documentation": {}
+    },
+    {
+        "label": "StatusProduto",
+        "kind": 6,
+        "importPath": "produto.models",
+        "description": "produto.models",
+        "peekOfCode": "class StatusProduto(models.TextChoices):\n    PENDENTE = 'Pendente', 'Pendente'\n    APROVADO = 'Aprovado', 'Aprovado'\n    REJEITADO = 'Rejeitado', 'Rejeitado'\nclass Produto(models.Model):\n    nome = models.CharField(max_length=100)\n    descricao = models.TextField()\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='produtos')\n    postado_em = models.DateTimeField(auto_now_add=True)",
         "detail": "produto.models",
         "documentation": {}
     },
@@ -917,7 +990,7 @@
         "kind": 6,
         "importPath": "produto.models",
         "description": "produto.models",
-        "peekOfCode": "class Produto(models.Model):\n    nome = models.CharField(max_length=100)\n    descricao = models.TextField()\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='produtos')\n    postado_em = models.DateTimeField(auto_now_add=True)\n    quantidade = models.PositiveIntegerField(default=0) \n    categoria = models.CharField(max_length=10, choices=Categoria.choices, default=Categoria.FRUTA)  \n    def __str__(self):\n        return self.nome",
+        "peekOfCode": "class Produto(models.Model):\n    nome = models.CharField(max_length=100)\n    descricao = models.TextField()\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='produtos')\n    postado_em = models.DateTimeField(auto_now_add=True)\n    quantidade = models.PositiveIntegerField(default=0) \n    categoria = models.CharField(max_length=10, choices=Categoria.choices, default=Categoria.FRUTA)  \n    status = models.CharField(max_length=10, choices=StatusProduto.choices, default=StatusProduto.PENDENTE)\n    def __str__(self):",
         "detail": "produto.models",
         "documentation": {}
     },
@@ -926,7 +999,7 @@
         "kind": 5,
         "importPath": "produto.urls",
         "description": "produto.urls",
-        "peekOfCode": "urlpatterns = [\n    path('listar/', views.listar_produtos, name='listar_produtos'),\n    path('adicionar/', views.adicionar_produto, name='adicionar_produto'),\n    path('editar/<int:id>/', views.editar_produto, name='editar_produto'),\n    path('excluir/<int:id>/', views.excluir_produto, name='excluir_produto'),\n    path('detalhes/<int:id>/', views.detalhar_produto, name='detalhar_produto'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('listar/', views.listar_produtos, name='listar_produtos'),\n    path('adicionar/', views.adicionar_produto, name='adicionar_produto'),\n    path('editar/<int:id>/', views.editar_produto, name='editar_produto'),\n    path('excluir/<int:id>/', views.excluir_produto, name='excluir_produto'),\n    path('detalhes/<int:id>/', views.detalhar_produto, name='detalhar_produto'),\n    path('aprovar/', views.aprovar_produtos, name='aprovar_produtos'),  \n]",
         "detail": "produto.urls",
         "documentation": {}
     },
@@ -971,7 +1044,16 @@
         "kind": 2,
         "importPath": "produto.views",
         "description": "produto.views",
-        "peekOfCode": "def detalhar_produto(request, id):\n    # Obtém o produto com base no ID fornecido\n    produto = get_object_or_404(Produto, id=id)\n    # Renderiza o template 'detalhar_produto.html' com o contexto do produto\n    return render(request, 'produto/detalhar_produto.html', {'produto': produto})",
+        "peekOfCode": "def detalhar_produto(request, id):\n    # Obtém o produto com base no ID fornecido\n    produto = get_object_or_404(Produto, id=id)\n    # Renderiza o template 'detalhar_produto.html' com o contexto do produto\n    return render(request, 'produto/detalhar_produto.html', {'produto': produto})\n## ======= METODOS PARA STAFF =========\n@staff_member_required\ndef aprovar_produtos(request):\n    # Obtendo apenas os produtos que têm o status pendente no banco de dados\n    produtos_pendentes = Produto.objects.filter(status=StatusProduto.PENDENTE) ",
+        "detail": "produto.views",
+        "documentation": {}
+    },
+    {
+        "label": "aprovar_produtos",
+        "kind": 2,
+        "importPath": "produto.views",
+        "description": "produto.views",
+        "peekOfCode": "def aprovar_produtos(request):\n    # Obtendo apenas os produtos que têm o status pendente no banco de dados\n    produtos_pendentes = Produto.objects.filter(status=StatusProduto.PENDENTE) \n    if request.method == 'POST':\n        produto_id = request.POST.get('produto_id')\n        acao = request.POST.get('acao')\n        produto = get_object_or_404(Produto, id=produto_id)\n        if acao == 'aprovar':\n            produto.status = StatusProduto.APROVADO\n        elif acao == 'rejeitar':",
         "detail": "produto.views",
         "documentation": {}
     },
@@ -1201,6 +1283,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "solicitacao.migrations.0003_rename_data_envio_notificacao_data_criacao_and_more",
+        "description": "solicitacao.migrations.0003_rename_data_envio_notificacao_data_criacao_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('solicitacao', '0002_notificacao'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='notificacao',\n            old_name='data_envio',\n            new_name='data_criacao',\n        ),",
+        "detail": "solicitacao.migrations.0003_rename_data_envio_notificacao_data_criacao_and_more",
+        "documentation": {}
+    },
+    {
         "label": "SolicitacaoConfig",
         "kind": 6,
         "importPath": "solicitacao.apps",
@@ -1223,7 +1314,16 @@
         "kind": 6,
         "importPath": "solicitacao.models",
         "description": "solicitacao.models",
-        "peekOfCode": "class Solicitacao(models.Model):\n    comprador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_feitas')\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_recebidas')\n    quantidade = models.PositiveIntegerField()\n    data_solicitacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.comprador.username} solicitou {self.quantidade} de {self.produto.nome}\"",
+        "peekOfCode": "class Solicitacao(models.Model):\n    comprador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_feitas')\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_recebidas')\n    quantidade = models.PositiveIntegerField()\n    data_solicitacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.comprador.username} solicitou {self.quantidade} de {self.produto.nome}\"\nclass Notificacao(models.Model):\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificacoes')",
+        "detail": "solicitacao.models",
+        "documentation": {}
+    },
+    {
+        "label": "Notificacao",
+        "kind": 6,
+        "importPath": "solicitacao.models",
+        "description": "solicitacao.models",
+        "peekOfCode": "class Notificacao(models.Model):\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificacoes')\n    solicitacao = models.ForeignKey(Solicitacao, on_delete=models.CASCADE)\n    mensagem = models.TextField(default=\"Mensagem padrão\")\n    lida = models.BooleanField(default=False)\n    data_criacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"Notificação para {self.vendedor.username} sobre a solicitação de {self.solicitacao.produto.nome}\"",
         "detail": "solicitacao.models",
         "documentation": {}
     },
@@ -1232,7 +1332,7 @@
         "kind": 5,
         "importPath": "solicitacao.urls",
         "description": "solicitacao.urls",
-        "peekOfCode": "urlpatterns = [\n    path('solicitacoes/', listar_solicitacoes, name='listar_solicitacoes'),\n    path('solicitacao/<int:id>/', detalhar_solicitacao, name='detalhar_solicitacao'),\n    path('solicitacao/adicionar/', adicionar_solicitacao, name='adicionar_solicitacao'),\n    path('solicitacao/<int:id>/editar/', editar_solicitacao, name='editar_solicitacao'),\n    path('solicitacao/<int:id>/excluir/', excluir_solicitacao, name='excluir_solicitacao'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('solicitacoes/', listar_solicitacoes, name='listar_solicitacoes'),\n    path('solicitacao/<int:id>/', detalhar_solicitacao, name='detalhar_solicitacao'),\n    path('solicitacao/adicionar/', adicionar_solicitacao, name='adicionar_solicitacao'),\n    path('solicitacao/<int:id>/editar/', editar_solicitacao, name='editar_solicitacao'),\n    path('solicitacao/<int:id>/excluir/', excluir_solicitacao, name='excluir_solicitacao'),\n    path('notificacoes/', listar_notificacoes, name='listar_notificacoes'),\n    path('aceitar-solicitacao/<int:notificacao_id>/', aceitar_solicitacao, name='aceitar_solicitacao'),\n    path('recusar-solicitacao/<int:notificacao_id>/', recusar_solicitacao, name='recusar_solicitacao'),\n]",
         "detail": "solicitacao.urls",
         "documentation": {}
     },
@@ -1277,7 +1377,34 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def excluir_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    if request.method == 'POST':\n        solicitacao.delete()\n        return redirect('listar_solicitacoes')\n    return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})",
+        "peekOfCode": "def excluir_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    if request.method == 'POST':\n        solicitacao.delete()\n        return redirect('listar_solicitacoes')\n    return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})\n@login_required\ndef listar_notificacoes(request):\n    notificacoes = request.user.notificacoes.filter(lida=False)\n    print(\"Notificações:\", notificacoes)  # Adicione isto para depuração",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "listar_notificacoes",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def listar_notificacoes(request):\n    notificacoes = request.user.notificacoes.filter(lida=False)\n    print(\"Notificações:\", notificacoes)  # Adicione isto para depuração\n    return render(request, 'listar_notificacoes.html', {'notificacoes': notificacoes})\n@login_required\ndef aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    solicitacao.status = 'Aceita'\n    solicitacao.save()",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "aceitar_solicitacao",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    solicitacao.status = 'Aceita'\n    solicitacao.save()\n    notificacao.lida = True\n    notificacao.save()\n    return redirect('listar_notificacoes')\n@login_required\ndef recusar_solicitacao(request, notificacao_id):",
+        "detail": "solicitacao.views",
+        "documentation": {}
+    },
+    {
+        "label": "recusar_solicitacao",
+        "kind": 2,
+        "importPath": "solicitacao.views",
+        "description": "solicitacao.views",
+        "peekOfCode": "def recusar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    solicitacao.status = 'Recusada'\n    solicitacao.save()\n    notificacao.lida = True\n    notificacao.save()\n    return redirect('listar_notificacoes')",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1288,6 +1415,24 @@
         "description": "usuarios.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Usuario',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "usuarios.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "usuarios.migrations.0002_rename_user_usuario_username",
+        "description": "usuarios.migrations.0002_rename_user_usuario_username",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('usuarios', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='usuario',\n            old_name='user',\n            new_name='username',\n        ),",
+        "detail": "usuarios.migrations.0002_rename_user_usuario_username",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "usuarios.migrations.0003_rename_username_usuario_user",
+        "description": "usuarios.migrations.0003_rename_username_usuario_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('usuarios', '0002_rename_user_usuario_username'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='usuario',\n            old_name='username',\n            new_name='user',\n        ),",
+        "detail": "usuarios.migrations.0003_rename_username_usuario_user",
         "documentation": {}
     },
     {
@@ -1340,7 +1485,7 @@
         "kind": 5,
         "importPath": "usuarios.urls",
         "description": "usuarios.urls",
-        "peekOfCode": "urlpatterns = [\n    path('editar/<int:usuario_id>/', views.editar_usuario, name='editar_usuario'),\n    path('excluir/<int:usuario_id>/', views.excluir_usuario, name='excluir_usuario'),\n    path('perfil/', views.perfil_usuario, name='perfil_usuario'),\n    path('register/', register, name='register'),\n    path('login/', login_view, name='login'),\n    path('logout/', custom_logout, name='logout'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('editar/<int:usuario_id>/', views.editar_usuario, name='editar'),\n    path('excluir/<int:id>/', views.excluir_usuario, name='excluir'),\n    path('perfil/', views.perfil_usuario, name='perfil_usuario'),\n    path('register/', register, name='register'),\n    path('login/', login_view, name='login'),\n    path('logout/', custom_logout, name='logout'),\n]",
         "detail": "usuarios.urls",
         "documentation": {}
     },
@@ -1358,7 +1503,7 @@
         "kind": 2,
         "importPath": "usuarios.views",
         "description": "usuarios.views",
-        "peekOfCode": "def excluir_usuario(request, usuario_id):\n    # Tenta obter o usuário pelo id, ou retorna um erro 404 se não encontrado\n    usuario = get_object_or_404(Usuario, id=usuario_id)\n    # Verifica se o usuário logado tem permissão para excluir\n    if request.user.is_staff or request.user == usuario.user:\n        # Verifica se o método da requisição é POST (confirmação de exclusão)\n        if request.method == 'POST':\n            # Exclui o usuário do banco de dados\n            usuario.delete()\n            # Redireciona para a página de listagem de usuários após a exclusão",
+        "peekOfCode": "def excluir_usuario(request, id):\n    if request.method == 'POST':\n        # Obtém o objeto User correspondente ao id fornecido\n        user = get_object_or_404(User, id=id)\n        # Obtém o objeto Usuario associado ao User\n        try:\n            usuario = Usuario.objects.get(user=user)\n            usuario.delete()\n        except Usuario.DoesNotExist:\n            # Se o objeto Usuario não for encontrado, você pode adicionar uma mensagem de erro ou logar o evento",
         "detail": "usuarios.views",
         "documentation": {}
     },
@@ -1367,7 +1512,7 @@
         "kind": 2,
         "importPath": "usuarios.views",
         "description": "usuarios.views",
-        "peekOfCode": "def perfil_usuario(request):\n    # Obtém o perfil do usuário logado\n    usuario = request.user.usuario\n    # Verifica se o método da requisição é POST (submissão de formulário)\n    if request.method == 'POST':\n        # Cria uma instância do formulário com os dados enviados e preenche com o perfil do usuário\n        form = UsuarioForm(request.POST, instance=usuario)\n        # Verifica se o formulário é válido\n        if form.is_valid():\n            # Salva as alterações no perfil do usuário",
+        "peekOfCode": "def perfil_usuario(request):\n    # Obtém o perfil do usuário logado\n    usuario = get_object_or_404(Usuario, user=request.user)\n    # Renderiza o template de perfil do usuário com os detalhes\n    return render(request, 'login/perfil.html', {'usuario': usuario})\n# ------- metodo para cadastrar e criar usuario -------\ndef register(request):\n    # Verifica se o metódo da requisição é do tipo POST\n    if request.method == 'POST':\n        # Cria instâncias dos formulários com os dados enviados via POST",
         "detail": "usuarios.views",
         "documentation": {}
     },

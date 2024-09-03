@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Confirmar Exclusão
+{% endblock %}
+
+{% block content %}
+    <h2>Tem certeza que deseja excluir o perfil de "{{ user.username }}"?</h2>
+
+    <form method="post" action="{% url 'excluir' user.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-info btn-sm">Confirmar Exclusão</button>
+        <a href="{% url 'listar_mural' %}" class="btn btn-danger btn-sm">Cancelar</a>
+    </form>
+{% endblock %}

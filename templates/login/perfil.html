@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Perfil
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <div class="usuario-detalhes">
+        <h1 class="h">{{ usuario.user.username }}</h1>
+        <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+        <p><strong>Email:</strong> {{ usuario.user.email }}</p>
+        <p><strong>Data de cadastro:</strong> {{ usuario.user.date_joined }}</p>
+        <!-- Adicionar mais detalhes conforme necessário -->
+
+        <a href="{% url 'editar' usuario.user.id %}" class="btn btn-success">Editar Perfil</a>
+        <a href="{% url 'excluir' usuario.user.id %}" class="btn btn-danger btn-sm">Excluir</a>
+    </div>
+{% endblock %}
