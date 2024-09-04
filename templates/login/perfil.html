@@ -18,7 +18,8 @@
             <p>Sem imagem disponível</p>
         {% endif %}
 
-        <p><strong>Usuario:</strong> {{ usuario.username }}</p>
+
+        <p><strong>Usuario:</strong> {{ usuario.user.username }}</p>
         <p><strong>Nome:</strong> {{ usuario.nome }}</p>
         <p><strong>Email:</strong> {{ usuario.user.email }}</p>
         <p><strong>Data de cadastro:</strong> {{ usuario.user.date_joined }}</p>

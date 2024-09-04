@@ -1,72 +1,23 @@
-{%load static%}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Perfil do Usuário{% endblock %}</title>
-    {% load static %}
-    <!-- Link para o CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA8sdzNDrG1kmtTlkeDJ2TL27E7YfUnTbH2/8y6zO4p6e5YEN9SxPRwJc0hftC" crossorigin="anonymous">
-    <!-- Link para o CSS específico da página -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Editar Perfil
+{% endblock %}
+
+{% block content %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <!-- CABEÇALHO -->
-    <header class="bg-light border-bottom">
-        <nav class="navbar navbar-expand-lg navbar-light container">
-            <a class="navbar-brand" href="{% url 'listar_mural' %}">SALEFRUITS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_mural' %}">Mural</a>
-                    </li>
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_produtos' %}">Meus Produtos</a>
-                    </li>
 
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'perfil_usuario' %}">{{ user.username }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Sair</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Entrar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}">Cadastrar</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div class="editar-perfil">
 
-    <!-- CONTEÚDO DA PÁGINA PRINCIPAL -->
-    <main class="container my-4">
-        <h1 class="h">Meu Perfil</h1>
-        <form method="POST">
+        <h1 class="h">Editar Perfil</h1>
+
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{% url 'perfil_usuario' %}" class="btn btn-secondary">Cancelar</a>
         </form>
-    </main>
 
-    <!-- RODAPÉ -->
-    <footer class="bg-light text-center py-3 border-top">
-        <p>&copy; 2024 SALEFRUITS. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Scripts do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-2tFZG7lR6JSAwHgsXG4+eH7jC/X8T1J0n8T45X5LfuC0Yo65s3XrF32h0OeqNbg" crossorigin="anonymous"></script>
-    <!-- Link para o JavaScript específico da página -->
-    <script src="{% static 'js/scripts.js' %}"></script>
-</body>
-</html>
+        
+    </div>
+{% endblock %}
