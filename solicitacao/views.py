@@ -97,18 +97,7 @@ def aceitar_solicitacao(request, notificacao_id):
     solicitacao.save()
     notificacao.lida = True
     notificacao.save()
-    
-    # Cria a sala de chat
-    room_title = f"Solicitação #{solicitacao.id}"
-    room, created = Room.objects.get_or_create(
-        title=room_title
-    )
-    
-    if created:
-        # Adiciona o comprador e o vendedor à sala
-        room.users.add(solicitacao.comprador, solicitacao.vendedor)
-    
-    return redirect('home')
+    return redirect('listar_notificacoes')
 
 
 
