@@ -65,51 +65,11 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -154,14 +114,6 @@
     },
     {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -233,6 +185,110 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -266,6 +322,22 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -471,6 +543,14 @@
         "importPath": "json",
         "description": "json",
         "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
         "documentation": {}
     },
     {
@@ -739,6 +819,14 @@
         "documentation": {}
     },
     {
+        "label": "Room",
+        "importPath": "chat.models",
+        "description": "chat.models",
+        "isExtraImport": true,
+        "detail": "chat.models",
+        "documentation": {}
+    },
+    {
         "label": "AuthenticationForm",
         "importPath": "django.contrib.auth.forms",
         "description": "django.contrib.auth.forms",
@@ -806,6 +894,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "chat.migrations.0003_remove_room_messages_remove_room_user_room_users",
+        "description": "chat.migrations.0003_remove_room_messages_remove_room_user_room_users",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('chat', '0002_alter_room_messages'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='room',\n            name='messages',\n        ),",
+        "detail": "chat.migrations.0003_remove_room_messages_remove_room_user_room_users",
+        "documentation": {}
+    },
+    {
         "label": "ChatConfig",
         "kind": 6,
         "importPath": "chat.apps",
@@ -819,7 +916,7 @@
         "kind": 6,
         "importPath": "chat.models",
         "description": "chat.models",
-        "peekOfCode": "class Room(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    messages = models.ManyToManyField('Message', blank=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.title\nclass Message(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    tex = models.TextField()",
+        "peekOfCode": "class Room(models.Model):\n    users = models.ManyToManyField(settings.AUTH_USER_MODEL)\n    title = models.CharField(max_length=200)\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.title\nclass Message(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    tex = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)",
         "detail": "chat.models",
         "documentation": {}
     },
@@ -837,7 +934,7 @@
         "kind": 5,
         "importPath": "chat.urls",
         "description": "chat.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.home, name=\"home\"),\n    path('create-room', views.create_room, name=\"create_room\"),\n    path('<pk>', views.RoomDetailView.as_view(), name=\"room_detail\"),\n    path('<pk>/send', views.send_message, name=\"send_message\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.home, name=\"home\"),\n    path('create-room', views.create_room, name=\"create_room\"),\n    path('<pk>/', views.RoomDetailView.as_view(), name=\"room_detail\"),\n    path('<pk>/send', views.send_message, name=\"send_message\"),\n]",
         "detail": "chat.urls",
         "documentation": {}
     },
@@ -846,7 +943,7 @@
         "kind": 6,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "class RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context\ndef send_message(request, pk):\n    data = json.loads(request.body)\n    room = Room.objects.get(id=pk)\n    new_message = Message.objects.create(user = request.user, tex=data['message'])",
+        "peekOfCode": "class RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        room = self.get_object()\n        context['messages'] = room.messages.all()\n        return context\ndef send_message(request, pk):\n    if request.method == 'POST':",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -855,7 +952,7 @@
         "kind": 2,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "def home(request):\n    rooms = Room.objects.all().order_by('-created_at')\n    return render(request, 'chat/home.html', {'rooms': rooms,\n    })\nclass RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context",
+        "peekOfCode": "def home(request):\n    rooms = Room.objects.all().order_by('-created_at')\n    return render(request, 'chat/home.html', {'rooms': rooms})\nclass RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        room = self.get_object()\n        context['messages'] = room.messages.all()",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -864,7 +961,7 @@
         "kind": 2,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "def send_message(request, pk):\n    data = json.loads(request.body)\n    room = Room.objects.get(id=pk)\n    new_message = Message.objects.create(user = request.user, tex=data['message'])\n    room.messages.add(new_message)\n    return render(request, 'chat/message.html', {\n        'm': new_message\n    })\ndef create_room(request):\n    data = json.loads(request.body)",
+        "peekOfCode": "def send_message(request, pk):\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        room = Room.objects.get(id=pk)\n        new_message = Message.objects.create(user=request.user, tex=data['message'])\n        room.messages.add(new_message)\n        return JsonResponse({'message': new_message.tex, 'user': new_message.user.username})\n    return JsonResponse({'error': 'Invalid request'}, status=400)\ndef create_room(request):\n    if request.method == 'POST':",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -873,7 +970,7 @@
         "kind": 2,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "def create_room(request):\n    data = json.loads(request.body)\n    room = Room.objects.create(user=request.user, title=data['title'])\n    return render(request, 'chat/room.html', {\n        'r': room\n    })",
+        "peekOfCode": "def create_room(request):\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        title = data.get('title')\n        room = Room.objects.create(title=title)\n        room.users.add(request.user)\n        return JsonResponse({'room_id': room.id, 'title': room.title})\n    return JsonResponse({'error': 'Invalid request'}, status=400)",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -941,6 +1038,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "produto.migrations.0005_produto_imagem",
+        "description": "produto.migrations.0005_produto_imagem",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('produto', '0004_produto_status'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='produto',\n            name='imagem',\n            field=models.ImageField(blank=True, null=True, upload_to='produto/'),\n        ),",
+        "detail": "produto.migrations.0005_produto_imagem",
+        "documentation": {}
+    },
+    {
         "label": "ProdutoConfig",
         "kind": 6,
         "importPath": "produto.apps",
@@ -954,7 +1060,7 @@
         "kind": 6,
         "importPath": "produto.forms",
         "description": "produto.forms",
-        "peekOfCode": "class ProdutoForm(forms.ModelForm):\n    class Meta:\n        model = Produto\n        fields = ['nome', 'descricao', 'preco', 'quantidade', 'categoria']\n        widgets = {\n            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome do Produto'}),\n            'descricao': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descrição do Produto', 'rows': 3}),\n            'preco': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Preço da Caixa'}),\n            'quantidade': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Quantidade de Caixas'}),\n            'categoria': forms.Select(attrs={'class': 'form-control'}),",
+        "peekOfCode": "class ProdutoForm(forms.ModelForm):\n    class Meta:\n        model = Produto\n        fields = ['nome', 'descricao', 'preco', 'quantidade', 'categoria', 'imagem']\n        widgets = {\n            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome do Produto'}),\n            'descricao': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descrição do Produto', 'rows': 3}),\n            'preco': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Preço da Caixa'}),\n            'quantidade': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Quantidade de Caixas'}),\n            'categoria': forms.Select(attrs={'class': 'form-control'}),",
         "detail": "produto.forms",
         "documentation": {}
     },
@@ -990,7 +1096,7 @@
         "kind": 6,
         "importPath": "produto.models",
         "description": "produto.models",
-        "peekOfCode": "class Produto(models.Model):\n    nome = models.CharField(max_length=100)\n    descricao = models.TextField()\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='produtos')\n    postado_em = models.DateTimeField(auto_now_add=True)\n    quantidade = models.PositiveIntegerField(default=0) \n    categoria = models.CharField(max_length=10, choices=Categoria.choices, default=Categoria.FRUTA)  \n    status = models.CharField(max_length=10, choices=StatusProduto.choices, default=StatusProduto.PENDENTE)\n    def __str__(self):",
+        "peekOfCode": "class Produto(models.Model):\n    nome = models.CharField(max_length=100)\n    descricao = models.TextField()\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='produtos')\n    postado_em = models.DateTimeField(auto_now_add=True)\n    quantidade = models.PositiveIntegerField(default=0) \n    categoria = models.CharField(max_length=10, choices=Categoria.choices, default=Categoria.FRUTA)  \n    status = models.CharField(max_length=10, choices=StatusProduto.choices, default=StatusProduto.PENDENTE)\n    imagem = models.ImageField(upload_to='produto/', null=True, blank=True)",
         "detail": "produto.models",
         "documentation": {}
     },
@@ -1017,7 +1123,7 @@
         "kind": 2,
         "importPath": "produto.views",
         "description": "produto.views",
-        "peekOfCode": "def adicionar_produto(request):\n    # Verifica se o método da requisição é POST (submissão de formulário)\n    if request.method == 'POST':\n        # Cria uma instância do formulário com os dados enviados\n        form = ProdutoForm(request.POST)\n        # Verifica se o formulário é válido\n        if form.is_valid():\n            # Cria um objeto produto, mas ainda não o salva no banco de dados\n            produto = form.save(commit=False)\n            # Vincula o produto ao usuário logado",
+        "peekOfCode": "def adicionar_produto(request):\n    # Verifica se o método da requisição é POST (submissão de formulário)\n    if request.method == 'POST':\n        # Cria uma instância do formulário com os dados enviados\n        form = ProdutoForm(request.POST, request.FILES)\n        # Verifica se o formulário é válido\n        if form.is_valid():\n            # Cria um objeto produto, mas ainda não o salva no banco de dados\n            produto = form.save(commit=False)\n            # Vincula o produto ao usuário logado",
         "detail": "produto.views",
         "documentation": {}
     },
@@ -1215,7 +1321,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / 'static',  # Diretório estático na raiz do projeto\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / 'static',  # Diretório estático na raiz do projeto\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login\nMEDIA_URL = '/media/'",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -1224,7 +1330,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Redireciona para a pagina escolhida após o logout\n#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -1233,7 +1339,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "#LOGOUT_REDIRECT_URL = 'listar_usuarios'\nLOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -1242,7 +1348,25 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "LOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login",
+        "peekOfCode": "LOGIN_URL = 'login'  # Ajuste essa URL para onde está sua página de login\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')",
+        "detail": "salefruits.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "salefruits.settings",
+        "description": "salefruits.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')",
+        "detail": "salefruits.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "salefruits.settings",
+        "description": "salefruits.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -1251,7 +1375,7 @@
         "kind": 5,
         "importPath": "salefruits.urls",
         "description": "salefruits.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"usuarios/\", include(\"usuarios.urls\")),\n    path('produtos/', include('produto.urls')), \n    path('mural/', include('mural.urls')),\n    path('chat/', include('chat.urls')),\n    path('solicitacao/', include('solicitacao.urls')),\n    path('', include('mural.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"usuarios/\", include(\"usuarios.urls\")),\n    path('produtos/', include('produto.urls')), \n    path('mural/', include('mural.urls')),\n    path('chat/', include('chat.urls')),\n    path('solicitacao/', include('solicitacao.urls')),\n    path('', include('mural.urls')),\n]\nif settings.DEBUG:",
         "detail": "salefruits.urls",
         "documentation": {}
     },
@@ -1292,6 +1416,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "solicitacao.migrations.0004_solicitacao_status",
+        "description": "solicitacao.migrations.0004_solicitacao_status",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('solicitacao', '0003_rename_data_envio_notificacao_data_criacao_and_more'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='solicitacao',\n            name='status',\n            field=models.CharField(choices=[('Pendente', 'Pendente'), ('Aceita', 'Aceita'), ('Recusada', 'Recusada')], default='Pendente', max_length=10),\n        ),",
+        "detail": "solicitacao.migrations.0004_solicitacao_status",
+        "documentation": {}
+    },
+    {
         "label": "SolicitacaoConfig",
         "kind": 6,
         "importPath": "solicitacao.apps",
@@ -1314,7 +1447,7 @@
         "kind": 6,
         "importPath": "solicitacao.models",
         "description": "solicitacao.models",
-        "peekOfCode": "class Solicitacao(models.Model):\n    comprador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_feitas')\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_recebidas')\n    quantidade = models.PositiveIntegerField()\n    data_solicitacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.comprador.username} solicitou {self.quantidade} de {self.produto.nome}\"\nclass Notificacao(models.Model):\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificacoes')",
+        "peekOfCode": "class Solicitacao(models.Model):\n    STATUS_CHOICES = [\n        ('Pendente', 'Pendente'),\n        ('Aceita', 'Aceita'),\n        ('Recusada', 'Recusada'),\n    ]\n    comprador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_feitas')\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='solicitacoes_recebidas')\n    quantidade = models.PositiveIntegerField()",
         "detail": "solicitacao.models",
         "documentation": {}
     },
@@ -1323,7 +1456,7 @@
         "kind": 6,
         "importPath": "solicitacao.models",
         "description": "solicitacao.models",
-        "peekOfCode": "class Notificacao(models.Model):\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificacoes')\n    solicitacao = models.ForeignKey(Solicitacao, on_delete=models.CASCADE)\n    mensagem = models.TextField(default=\"Mensagem padrão\")\n    lida = models.BooleanField(default=False)\n    data_criacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"Notificação para {self.vendedor.username} sobre a solicitação de {self.solicitacao.produto.nome}\"",
+        "peekOfCode": "class Notificacao(models.Model):\n    vendedor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificacoes')\n    solicitacao = models.ForeignKey(Solicitacao, on_delete=models.CASCADE)\n    mensagem = models.TextField(default=\"Mensagem padrão\")\n    lida = models.BooleanField(default=False)\n    data_criacao = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.vendedor.username} solicitou {self.solicitacao.quantidade} de {self.solicitacao.produto.nome}\"",
         "detail": "solicitacao.models",
         "documentation": {}
     },
@@ -1341,7 +1474,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def listar_solicitacoes(request):\n    solicitacoes = Solicitacao.objects.filter(comprador=request.user)\n    return render(request, 'solicitacao/listar_solicitacoes.html', {'solicitacoes': solicitacoes})\n# ------- Método para visualizar detalhes de uma solicitação -------\n@login_required\ndef detalhar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})\n# ------- Método para adicionar uma nova solicitação -------\n@login_required",
+        "peekOfCode": "def listar_solicitacoes(request):\n    solicitacoes = Solicitacao.objects.filter(comprador=request.user)\n    return render(request, 'solicitacao/listar_solicitacoes.html', {'solicitacoes': solicitacoes})\n#método para visualizar detalhes de uma solicitação\n@login_required\ndef detalhar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})\n#método para adicionar uma nova solicitação\n@login_required",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1350,7 +1483,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def detalhar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})\n# ------- Método para adicionar uma nova solicitação -------\n@login_required\ndef adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:",
+        "peekOfCode": "def detalhar_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})\n#método para adicionar uma nova solicitação\n@login_required\ndef adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1359,7 +1492,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:\n            return redirect('listar_produtos')  # Redireciona caso não tenha produto_id\n        produto = get_object_or_404(Produto, id=produto_id)\n        if form.is_valid():\n            quantidade = form.cleaned_data['quantidade']\n            solicitacao = Solicitacao.objects.create(",
+        "peekOfCode": "def adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:\n            return redirect('listar_produtos')  #Redireciona caso não tenha produto_id\n        produto = get_object_or_404(Produto, id=produto_id)\n        if form.is_valid():\n            quantidade = form.cleaned_data['quantidade']\n            solicitacao = Solicitacao.objects.create(",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1377,7 +1510,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def excluir_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    if request.method == 'POST':\n        solicitacao.delete()\n        return redirect('listar_solicitacoes')\n    return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})\n@login_required\ndef listar_notificacoes(request):\n    notificacoes = request.user.notificacoes.filter(lida=False)\n    print(\"Notificações:\", notificacoes)  # Adicione isto para depuração",
+        "peekOfCode": "def excluir_solicitacao(request, id):\n    solicitacao = get_object_or_404(Solicitacao, id=id)\n    if request.method == 'POST':\n        solicitacao.delete()\n        return redirect('listar_solicitacoes')\n    return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})\n#Lista todas as notificações não lidas do usuário logado e as exibe na página\n@login_required\ndef listar_notificacoes(request):\n    notificacoes = request.user.notificacoes.filter(lida=False)",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1386,7 +1519,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def listar_notificacoes(request):\n    notificacoes = request.user.notificacoes.filter(lida=False)\n    print(\"Notificações:\", notificacoes)  # Adicione isto para depuração\n    return render(request, 'listar_notificacoes.html', {'notificacoes': notificacoes})\n@login_required\ndef aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    solicitacao.status = 'Aceita'\n    solicitacao.save()",
+        "peekOfCode": "def listar_notificacoes(request):\n    notificacoes = request.user.notificacoes.filter(lida=False)\n    print(\"Notificações:\", notificacoes)\n    return render(request, 'listar_notificacoes.html', {'notificacoes': notificacoes})\n#Permite ao vendedor aceitar uma solicitação. Atualiza o status da solicitação para \"Aceita\" e marca a notificação como lida.python\n# Permite ao vendedor aceitar uma solicitação. Atualiza o status da solicitação para \"Aceita\" e marca a notificação como lida.\n@login_required\ndef aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1395,7 +1528,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    solicitacao.status = 'Aceita'\n    solicitacao.save()\n    notificacao.lida = True\n    notificacao.save()\n    return redirect('listar_notificacoes')\n@login_required\ndef recusar_solicitacao(request, notificacao_id):",
+        "peekOfCode": "def aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    # Atualiza o status da solicitação para \"Aceita\" e marca a notificação como lida\n    solicitacao.status = 'Aceita'\n    solicitacao.save()\n    notificacao.lida = True\n    notificacao.save()\n    # Cria a sala de chat\n    room_title = f\"Solicitação #{solicitacao.id}\"",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1436,6 +1569,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "usuarios.migrations.0004_usuario_imagem_perfil",
+        "description": "usuarios.migrations.0004_usuario_imagem_perfil",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('usuarios', '0003_rename_username_usuario_user'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='usuario',\n            name='imagem_perfil',\n            field=models.ImageField(blank=True, null=True, upload_to='usuarios/'),\n        ),",
+        "detail": "usuarios.migrations.0004_usuario_imagem_perfil",
+        "documentation": {}
+    },
+    {
         "label": "UsuariosConfig",
         "kind": 6,
         "importPath": "usuarios.apps",
@@ -1467,7 +1609,7 @@
         "kind": 6,
         "importPath": "usuarios.forms",
         "description": "usuarios.forms",
-        "peekOfCode": "class UsuarioForm(forms.ModelForm):\n    class Meta:\n        model = Usuario\n        fields = ['nome', 'cpf', 'telefone', 'endereco', 'descricao']\n        widgets = {\n            'nome': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'cpf': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'telefone': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'endereco': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'descricao': forms.TextInput(attrs={\"class\": \"form-control\"}),",
+        "peekOfCode": "class UsuarioForm(forms.ModelForm):\n    class Meta:\n        model = Usuario\n        fields = ['nome', 'cpf', 'telefone', 'endereco', 'descricao', 'imagem_perfil']\n        widgets = {\n            'nome': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'cpf': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'telefone': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'endereco': forms.TextInput(attrs={\"class\": \"form-control\"}),\n            'descricao': forms.TextInput(attrs={\"class\": \"form-control\"}),",
         "detail": "usuarios.forms",
         "documentation": {}
     },
@@ -1476,7 +1618,7 @@
         "kind": 6,
         "importPath": "usuarios.models",
         "description": "usuarios.models",
-        "peekOfCode": "class Usuario(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    nome = models.CharField(max_length=100)\n    cpf = models.CharField(max_length=11, unique=True)\n    telefone = models.CharField(max_length=15)\n    endereco = models.CharField(max_length=255)\n    descricao = models.TextField(blank=True)\n    def __str__(self):\n        return self.nome",
+        "peekOfCode": "class Usuario(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    nome = models.CharField(max_length=100)\n    cpf = models.CharField(max_length=11, unique=True)\n    telefone = models.CharField(max_length=15)\n    endereco = models.CharField(max_length=255)\n    descricao = models.TextField(blank=True)\n    imagem_perfil = models.ImageField(upload_to='usuarios/', null=True, blank=True)  # Certifique-se de que este campo está definido\n    def __str__(self):\n        return self.nome",
         "detail": "usuarios.models",
         "documentation": {}
     },
@@ -1521,7 +1663,7 @@
         "kind": 2,
         "importPath": "usuarios.views",
         "description": "usuarios.views",
-        "peekOfCode": "def register(request):\n    # Verifica se o metódo da requisição é do tipo POST\n    if request.method == 'POST':\n        # Cria instâncias dos formulários com os dados enviados via POST\n        user_form = UserRegisterForm(request.POST)\n        usuario_form = UsuarioForm(request.POST)\n        # Verifica se ambos os formulários são válidos\n        if user_form.is_valid() and usuario_form.is_valid():\n            # Cria uma instância do modelo User, mas não a salva ainda\n            user = user_form.save(commit=False)",
+        "peekOfCode": "def register(request):\n    # Verifica se o metódo da requisição é do tipo POST\n    if request.method == 'POST':\n        # Cria instâncias dos formulários com os dados enviados via POST\n        user_form = UserRegisterForm(request.POST)\n        usuario_form = UsuarioForm(request.POST, request.FILES)\n        # Verifica se ambos os formulários são válidos\n        if user_form.is_valid() and usuario_form.is_valid():\n            # Cria uma instância do modelo User, mas não a salva ainda\n            user = user_form.save(commit=False)",
         "detail": "usuarios.views",
         "documentation": {}
     },

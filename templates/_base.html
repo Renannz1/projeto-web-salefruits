@@ -21,6 +21,60 @@
     </script>
     <script defer src="{% static 'js/utils.js' %}"></script>
     {% block js %}{% endblock %}
+
+    <output></output> <!-- Área onde as mensagens recebidas serão exibidas -->
+    <input type="text" placeholder="Digite sua mensagem"> <!-- Campo de texto para inserir mensagens -->
+    <button>Enviar</button> <!-- Botão para enviar a mensagem -->
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ws = new WebSocket('ws://localhost:5500'); // Conectando ao servidor WebSocket
+            const input = document.querySelector('input');
+            const output = document.querySelector('output');
+            const button = document.querySelector('button');
+
+            // Evento quando a conexão WebSocket é aberta
+            ws.addEventListener('open', () => {
+                console.log('Conectado ao WebSocket');
+            });
+
+            // Evento quando uma mensagem é recebida do servidor
+            ws.addEventListener('message', (event) => {
+                const message = document.createElement('div');
+                message.textContent = 'Outro: ' + event.data;
+                output.append(message);
+            });
+
+            // Evento quando a conexão WebSocket é fechada
+            ws.addEventListener('close', () => {
+                console.log('Conexão WebSocket fechada');
+            });
+
+            // Evento quando ocorre um erro com o WebSocket
+            ws.addEventListener('error', (err) => {
+                console.error('Erro WebSocket:', err);
+            });
+
+            // Função para enviar uma mensagem
+            function sendMessage() {
+                const text = input.value.trim();
+                if (text) {
+                    ws.send(text);
+                    input.value = ''; // Limpa o campo de entrada após o envio
+                }
+            }
+
+            // Adiciona evento de clique ao botão de enviar
+            button.addEventListener('click', sendMessage);
+
+            // Adiciona evento de pressionar a tecla Enter no campo de texto
+            input.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
