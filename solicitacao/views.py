@@ -1,3 +1,4 @@
+from pyexpat.errors import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
@@ -25,12 +26,17 @@ def adicionar_solicitacao(request):
         produto_id = request.POST.get('produto_id')
 
         if not produto_id:
-            return redirect('listar_produtos')  #Redireciona caso não tenha produto_id
+            return redirect('listar_produtos')  # Redireciona caso não tenha produto_id
 
         produto = get_object_or_404(Produto, id=produto_id)
         
         if form.is_valid():
             quantidade = form.cleaned_data['quantidade']
+            
+            if quantidade > produto.quantidade:
+                messages.error(request, f'Quantidade solicitada ({quantidade}) é maior que a disponível ({produto.quantidade}).')
+                return render(request, 'solicitacao/form_solicitacao.html', {'form': form, 'produto': produto})
+
             solicitacao = Solicitacao.objects.create(
                 comprador=request.user,
                 produto=produto,
@@ -43,7 +49,6 @@ def adicionar_solicitacao(request):
                 vendedor=produto.usuario,
                 solicitacao=solicitacao,
                 mensagem=f"{request.user.username} solicitou {quantidade} para o produto {produto.nome}."
-                
             )
             return redirect('listar_solicitacoes')
     else:
@@ -55,6 +60,7 @@ def adicionar_solicitacao(request):
         form = SolicitarProdutoForm()
     
     return render(request, 'solicitacao/form_solicitacao.html', {'form': form, 'produto': produto})
+
 
 #método para editar uma solicitação
 @login_required

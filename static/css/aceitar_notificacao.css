@@ -73,3 +73,15 @@
     font-style: italic;
     color: #666;
 }
+/* Estilo para o título principal (h1) */
+h1 {
+    font-size: 28px; /* Tamanho do texto */
+    font-weight: 700; /* Negrito */
+    color: #333; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    padding: 10px; /* Espaçamento interno opcional */
+    background-color: #f8f9fa; /* Cor de fundo leve */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}

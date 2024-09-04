@@ -6,12 +6,14 @@
     Mural de Vendas - Marketplace
 {% endblock %}
 
-{% block content %}    
-    <div class="container">
-        <h1>Mural de Vendas - Todos os Produtos Adicionados</h1>  
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/listar_produtos.css' %}">
+
+    <div class="container my-5">
+        <h1 class="mb-4">Mural de Vendas - Todos os Produtos Adicionados</h1>  
 
         <!-- Formulário - filtro de produtos -->
-        <form method="get" class="mb-4 p-3 border rounded">
+        <form method="get" class="mb-4 p-3 border rounded bg-light">
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Filtrar</button>
         </form>
@@ -31,6 +33,13 @@
                 <div class="col-md-4 mb-4">
                     <div class="card shadow-sm">
                         <div class="card-body">
+                            <!-- Imagem do produto -->
+                            {% if produto.imagem %}
+                                <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-produto">
+                            {% else %}
+                                <p>Sem imagem disponível</p>
+                            {% endif %}
+
                             <h5 class="card-title">{{ produto.nome }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Usuário: {{ produto.usuario.username }}</h6>
                             <p class="card-text">Preço: R$ {{ produto.preco }}</p>
@@ -39,12 +48,15 @@
                         </div>
                     </div>
                 </div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <p class="text-muted">Nenhum produto encontrado.</p>
+                </div>
             {% endfor %} 
         </div>
     </div>
-    
 {% endblock %}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-2tFZG7lR6JSAwHgsXG4+eH7jC/X8T1J0n8T45X5LfuC0Yo65s3XrF32h0OeqNbg" crossorigin="anonymous"></script>
 {% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-2tFZG7lR6JSAwHgsXG4+eH7jC/X8T1J0n8T45X5LfuC0Yo65s3XrF32h0OeqNbg" crossorigin="anonymous"></script>
 {% endblock %}

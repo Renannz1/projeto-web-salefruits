@@ -14,6 +14,22 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 /* Plano de fundo do corpo da página */
+/* Estilo para os itens do menu */
+.navbar-nav .nav-item {
+  margin: 0 10px; /* Espaçamento entre os itens */
+}
+
+/* Efeito de hover para os itens do menu */
+.navbar-nav .nav-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #495057; /* Cor de fundo ao passar o mouse */
+  color: #fff; /* Cor do texto ao passar o mouse */
+  border-radius: 4px; /* Bordas arredondadas ao passar o mouse */
+}
+
 :root {
   --bs-blue: #0056b3; /* Azul marinho */
   --bs-indigo: #6610f2; /* Roxo suave */
