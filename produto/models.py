@@ -20,9 +20,7 @@ class Produto(models.Model):
     quantidade = models.PositiveIntegerField(default=0) 
     categoria = models.CharField(max_length=10, choices=Categoria.choices, default=Categoria.FRUTA)  
     status = models.CharField(max_length=10, choices=StatusProduto.choices, default=StatusProduto.PENDENTE)
-
-
-
+    imagem = models.ImageField(upload_to='produto/', null=True, blank=True)
 
     def __str__(self):
         return self.nome

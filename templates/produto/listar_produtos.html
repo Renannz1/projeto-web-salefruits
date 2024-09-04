@@ -12,17 +12,13 @@
     <link rel="stylesheet" href="{% static 'css/listar_produtos.css' %}">
 
     <!-- Cabeçalho da lista de produtos -->
-    <div class="h">
     <h1 class="h">Meus Produtos Adicionados</h1>  
-    </div>      
+     
     <!-- Formulário - filtro de produtos -->
     <form method="get" class="mb-4 p-3 border rounded">
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Filtrar</button>
     </form>
-
-    <!-- Linha horizontal para separar o cabeçalho dos produtos -->
-    <hr class="linha-separadora">
 
     <div class="container-botoes">
         <a href="{% url 'adicionar_produto' %}" class="btn-adicionar">Adicionar Produto</a>
@@ -36,10 +32,14 @@
                 <!-- Loop através de cada produto na lista -->
                 <div class="status_produto"> 
                     <p>Status: {{ produto.get_status_display }}</p>
-                    <hr class="linha-separadora">
                 </div>
 
-                
+                {% if produto.imagem %}
+                    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" style="max-width: 200px; max-height: 200px;">
+                {% else %}
+                    <p>Sem imagem disponível</p>
+                {% endif %}
+                            
                 <h3>{{ produto.nome }}</h3>
                 <p>{{ produto.descricao }}</p>
                 <p>Preço da Caixa: R$ {{ produto.preco }}</p>
@@ -47,7 +47,7 @@
 
 
                 <!-- Links para editar e excluir o produto -->
-                <a href="{% url 'editar_produto' produto.id %}" class="btn btn-warning btn-sm">Editar</a> |
+                <a href="{% url 'editar_produto' produto.id %}" class="btn btn-warning btn-sm">Editar</a>
                 <a href="{% url 'excluir_produto' produto.id %}" class="btn btn-danger btn-sm">Excluir</a>
                 
             </div>

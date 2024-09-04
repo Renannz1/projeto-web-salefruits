@@ -33,7 +33,7 @@ def adicionar_produto(request):
     # Verifica se o método da requisição é POST (submissão de formulário)
     if request.method == 'POST':
         # Cria uma instância do formulário com os dados enviados
-        form = ProdutoForm(request.POST)
+        form = ProdutoForm(request.POST, request.FILES)
 
         # Verifica se o formulário é válido
         if form.is_valid():
