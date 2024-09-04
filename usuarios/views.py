@@ -25,7 +25,7 @@ def editar_usuario(request, usuario_id):
         # Verifica se o método da requisição é POST (submissão do formulário)
         if request.method == 'POST':
             # Cria uma instância do formulário com os dados enviados e o perfil do usuário
-            form = UsuarioForm(request.POST, instance=usuario)
+            form = UsuarioForm(request.POST, request.FILES, instance=usuario)
             # Verifica se o formulário é válido
             if form.is_valid():
                 # Salva as alterações no perfil do usuário
@@ -87,7 +87,7 @@ def register(request):
     if request.method == 'POST':
         # Cria instâncias dos formulários com os dados enviados via POST
         user_form = UserRegisterForm(request.POST)
-        usuario_form = UsuarioForm(request.POST)
+        usuario_form = UsuarioForm(request.POST, request.FILES)
         
         # Verifica se ambos os formulários são válidos
         if user_form.is_valid() and usuario_form.is_valid():

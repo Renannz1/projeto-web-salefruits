@@ -44,7 +44,7 @@ class UserRegisterForm(forms.ModelForm):
 class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nome', 'cpf', 'telefone', 'endereco', 'descricao']
+        fields = ['nome', 'cpf', 'telefone', 'endereco', 'descricao', 'imagem_perfil']
         widgets = {
             'nome': forms.TextInput(attrs={"class": "form-control"}),
             'cpf': forms.TextInput(attrs={"class": "form-control"}),

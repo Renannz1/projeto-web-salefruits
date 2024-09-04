@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <div class="usuario-detalhes">
-        <h1 class="h">{{ usuario.user.username }}</h1>
+
+        <h1 class="h">Meu Perfil</h1>
+
+
+        {% if usuario.imagem_perfil %}
+            <img src="{{ usuario.imagem_perfil.url }}" alt="{{ usuario.nome }}" style="max-width: 200px; max-height: 200px;">
+        {% else %}
+            <p>Sem imagem disponível</p>
+        {% endif %}
+
+        <p><strong>Usuario:</strong> {{ usuario.username }}</p>
         <p><strong>Nome:</strong> {{ usuario.nome }}</p>
         <p><strong>Email:</strong> {{ usuario.user.email }}</p>
         <p><strong>Data de cadastro:</strong> {{ usuario.user.date_joined }}</p>

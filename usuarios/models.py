@@ -8,6 +8,7 @@ class Usuario(models.Model):
     telefone = models.CharField(max_length=15)
     endereco = models.CharField(max_length=255)
     descricao = models.TextField(blank=True)
+    imagem_perfil = models.ImageField(upload_to='usuarios/', null=True, blank=True)  # Certifique-se de que este campo está definido
 
     def __str__(self):
         return self.nome
