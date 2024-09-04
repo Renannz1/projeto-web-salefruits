@@ -13,6 +13,7 @@
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
+                    <th>Id</th>
                     <th>Comprador</th>
                     <th>Produto</th>
                     <th>Vendedor</th>
@@ -25,6 +26,7 @@
             <tbody>
                 {% for solicitacao in solicitacoes %}
                 <tr>
+                    <td> {{ solicitacao.id }} </td>
                     <td>{{ solicitacao.comprador.username }}</td>
                     <td>{{ solicitacao.produto.nome }}</td>
                     <td>{{ solicitacao.vendedor.username }}</td>

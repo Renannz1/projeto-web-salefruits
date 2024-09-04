@@ -1,5 +1,5 @@
-<form class="send-message">
+<form class="send-message" method="post" action="{% url 'send_message' room.id %}">
     {% csrf_token %}
-    <input type="hidden" name="room_id" id="selected-room">
     <input type="text" name="message" class="form-control border-1 fs-5" placeholder="Escreva uma mensagem">
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

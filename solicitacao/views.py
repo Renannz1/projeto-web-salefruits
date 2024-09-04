@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+
+from chat.models import Room
 from .models import Notificacao, Solicitacao, Produto
 from .forms import SolicitarProdutoForm
 
@@ -84,15 +86,31 @@ def listar_notificacoes(request):
     return render(request, 'listar_notificacoes.html', {'notificacoes': notificacoes})
 
 #Permite ao vendedor aceitar uma solicitação. Atualiza o status da solicitação para "Aceita" e marca a notificação como lida.python
+# Permite ao vendedor aceitar uma solicitação. Atualiza o status da solicitação para "Aceita" e marca a notificação como lida.
 @login_required
 def aceitar_solicitacao(request, notificacao_id):
     notificacao = get_object_or_404(Notificacao, id=notificacao_id)
     solicitacao = notificacao.solicitacao
+    
+    # Atualiza o status da solicitação para "Aceita" e marca a notificação como lida
     solicitacao.status = 'Aceita'
     solicitacao.save()
     notificacao.lida = True
     notificacao.save()
+    
+    # Cria a sala de chat
+    room_title = f"Solicitação #{solicitacao.id}"
+    room, created = Room.objects.get_or_create(
+        title=room_title
+    )
+    
+    if created:
+        # Adiciona o comprador e o vendedor à sala
+        room.users.add(solicitacao.comprador, solicitacao.vendedor)
+    
     return redirect('home')
+
+
 
 #Permite ao vendedor recusar uma solicitação. Atualiza o status da solicitação para "Recusada" e marca a notificação como lida.
 @login_required
