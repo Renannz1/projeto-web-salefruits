@@ -6,53 +6,45 @@
     Mural de Vendas - Marketplace
 {% endblock %}
 
-{% block content %}
+{% block content %}    
+    <div class="container">
+        <h1>Mural de Vendas - Todos os Produtos Adicionados</h1>  
 
-    <!-- Formulário simplificado para filtro de produtos, ocupando menos espaço -->
-    <form method="get" class="d-flex justify-content-center mb-4">
-        <!-- Acessando o campo do formulário diretamente -->
-        {{ form.categoria }}
-        <button type="submit" class="btn btn-primary ms-2">Filtrar</button>
-    </form>
-
-
-    <!-- Container principal com padding e centralização -->
-    <div class="container my-5">
-        <!-- Cabeçalho da página com um título principal e descrição -->
-        <header class="text-center mb-4">
-            <h1 class="display-4">Mural de Vendas</h1>
-            <p class="lead text-muted">Todos os produtos disponíveis no marketplace.</p>
-        </header>
+        <!-- Formulário - filtro de produtos -->
+        <form method="get" class="mb-4 p-3 border rounded">
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </form>
 
         <!-- Linha horizontal para separar o cabeçalho dos produtos -->
         <hr class="my-4">
 
-        <!-- Botão para adicionar produto, alinhado à direita -->
+        <!-- Botão para adicionar produto -->
         <div class="d-flex justify-content-end mb-4">
-            <a href="{% url 'adicionar_produto' %}" class="btn btn-success btn-lg">Adicionar Produto</a>
+            <a href="{% url 'adicionar_produto' %}" class="btn btn-success">Adicionar Produto</a>
         </div>
 
-        <!-- Grid de produtos exibido em colunas -->
+        <!-- Grid de produtos -->
         <div class="row">
-            <!-- Loop através de cada produto na lista -->
+            <!-- Loop através de cada produto na lista -->        
             {% for produto in produtos %}
                 <div class="col-md-4 mb-4">
-                    <div class="card shadow-lg border-light">
-                        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="card-img-top" style="height: 150px; object-fit: cover;">
+                    <div class="card shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">{{ produto.nome }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Usuário: {{ produto.usuario.username }}</h6>
                             <p class="card-text">Preço: R$ {{ produto.preco }}</p>
+                            <!-- Link botão para detalhar produto -->     
                             <a href="{% url 'detalhar_produto' produto.id %}" class="btn btn-info">Ver mais detalhes</a>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            {% endfor %} 
         </div>
     </div>
+    
 {% endblock %}
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-2tFZG7lR6JSAwHgsXG4+eH7jC/X8T1J0n8T45X5LfuC0Yo65s3XrF32h0OeqNbg" crossorigin="anonymous"></script>
 {% block scripts %}
-    <!-- Scripts do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-2tFZG7lR6JSAwHgsXG4+eH7jC/X8T1J0n8T45X5LfuC0Yo65s3XrF32h0OeqNbg" crossorigin="anonymous"></script>
 {% endblock %}

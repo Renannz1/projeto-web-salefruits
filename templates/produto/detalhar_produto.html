@@ -1,4 +1,3 @@
-<!-- produtos/templates/produtos/detalhar_produto.html -->
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
@@ -6,20 +5,39 @@
 {% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/detalhar_produto.css' %}">
+    <!-- Inclua o Bootstrap CSS no head do seu base.html -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1 class="h3">Detalhes do Produto</h1>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <!-- Coluna para a imagem do produto -->
+                    <div class="col-md-6 text-center mb-4">
+                        {% if produto.imagem %}
+                            <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="img-thumbnail" style="max-width: 400px; max-height: 400px;">
+                        {% else %}
+                            <p class="text-muted">Imagem não disponível</p>
+                        {% endif %}
+                    </div>
+                    <!-- Coluna para os detalhes do produto -->
+                    <div class="col-md-6">
+                        <p><strong>Nome:</strong> {{ produto.nome }}</p>
+                        <p><strong>Usuário:</strong> {{ produto.usuario.username }}</p>
+                        <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+                        <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+                        <p><strong>Quantidade:</strong> {{ produto.quantidade }}</p>
 
-    <div class="produto-detalhes">
-        <h1 class="h">{{ produto.nome }}</h1>
-        <p><strong>Usuário:</strong> {{ produto.usuario.username }}</p>
-        <p><strong>Preço:</strong> {{ produto.preco }}</p>
-        <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
-        <p><strong>Qauntidade:</strong> {{ produto. }}</p>
-        <!-- Adicionar mais detalhes conforme necessário -->
-
-        <a href="{% url 'adicionar_solicitacao' %}?produto_id={{ produto.id }}" class="btn btn-success">Solicitar Produto</a>
-
-
+                        <!-- Botão para solicitar o produto -->
+                        <div class="mt-4">
+                            <a href="{% url 'adicionar_solicitacao' %}?produto_id={{ produto.id }}" class="btn btn-success">Solicitar Produto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
-<!--listar solicitacoes-->
