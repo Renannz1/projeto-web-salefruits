@@ -5,27 +5,39 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Inclua o Bootstrap CSS no head do seu base.html -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <div class="usuario-detalhes">
-
-        <h1 class="h">Meu Perfil</h1>
-
-
-        {% if usuario.imagem_perfil %}
-            <img src="{{ usuario.imagem_perfil.url }}" alt="{{ usuario.nome }}" style="max-width: 200px; max-height: 200px;">
-        {% else %}
-            <p>Sem imagem disponível</p>
-        {% endif %}
-
-
-        <p><strong>Usuario:</strong> {{ usuario.user.username }}</p>
-        <p><strong>Nome:</strong> {{ usuario.nome }}</p>
-        <p><strong>Email:</strong> {{ usuario.user.email }}</p>
-        <p><strong>Data de cadastro:</strong> {{ usuario.user.date_joined }}</p>
-        <!-- Adicionar mais detalhes conforme necessário -->
-
-        <a href="{% url 'editar' usuario.user.id %}" class="btn btn-success">Editar Perfil</a>
-        <a href="{% url 'excluir' usuario.user.id %}" class="btn btn-danger btn-sm">Excluir</a>
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1 class="h3">Meu Perfil</h1>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center">
+                        {% if usuario.imagem_perfil %}
+                            <img src="{{ usuario.imagem_perfil.url }}" alt="{{ usuario.nome }}" class="img-thumbnail mb-3" style="max-width: 300px; max-height: 300px;">
+                        {% else %}
+                            <p class="text-muted">Sem imagem disponível</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <p><strong>Usuário:</strong> {{ usuario.user.username }}</p>
+                        <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+                        <p><strong>Descricão:</strong> {{ usuario.descricao }}</p>
+                        <p><strong>CPF:</strong> {{ usuario.cpf }}</p>
+                        
+                        <br>
+                        <p><strong>Email:</strong> {{ usuario.user.email }}</p>
+                        <p><strong>Data de cadastro:</strong> {{ usuario.user.date_joined }}</p>
+                        <div class="mt-4">
+                            <a href="{% url 'editar' usuario.user.id %}" class="btn btn-success me-2">Editar Perfil</a>
+                            <a href="{% url 'excluir' usuario.user.id %}" class="btn btn-danger">Excluir Perfil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
