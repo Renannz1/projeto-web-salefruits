@@ -5,11 +5,31 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Tem certeza que deseja excluir o perfil de "{{ user.username }}"?</h2>
+    <!-- Container para centralizar o conteúdo -->
+    <div class="container my-5">
+        <!-- Card para estilização -->
+        <div class="card shadow-sm border-danger">
+            <!-- Cabeçalho do card com um título simples -->
+            <div class="card-header bg-danger text-white text-center">
+                <h3 class="card-title">Confirmação de Exclusão</h3>
+            </div>
+            <!-- Corpo do card com a mensagem e botões -->
+            <div class="card-body text-center">
+                <!-- Mensagem perguntando sobre a exclusão -->
+                <p class="lead mb-4">Você está prestes a excluir o seu perfil. Deseja continuar?</p>
+                
+                <!-- Formulário para confirmação da exclusão -->
+                <form method="post" action="{% url 'excluir' user.id %}" class="d-inline">
+                    {% csrf_token %}
+                    <!-- Botão para confirmar a exclusão -->
+                    <button type="submit" class="btn btn-danger btn-lg">Sim, Excluir</button>
 
-    <form method="post" action="{% url 'excluir' user.id %}">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-info btn-sm">Confirmar Exclusão</button>
-        <a href="{% url 'listar_mural' %}" class="btn btn-danger btn-sm">Cancelar</a>
-    </form>
+                    <!-- Link para cancelar a exclusão -->
+                    <a href="{% url 'listar_mural' %}" class="btn btn-secondary btn-lg ms-3">Cancelar</a>
+                </form>
+                
+                
+            </div>
+        </div>
+    </div>
 {% endblock %}

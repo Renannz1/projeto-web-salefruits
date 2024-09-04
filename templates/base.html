@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 
     <!-- CSS específico do sistema -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -30,34 +29,34 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_produtos' %}">Meus Produtos</a>
+                        <a class="nav-link fw-semibold text-white" href="{% url 'listar_produtos' %}">Meus Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_solicitacoes' %}">Solicitações</a>
+                        <a class="nav-link fw-semibold text-white" href="{% url 'listar_solicitacoes' %}">Solicitações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_notificacoes' %}">Notificações</a>
+                        <a class="nav-link fw-semibold text-white" href="{% url 'listar_notificacoes' %}">Notificações</a>
                     </li>
 
                     {% if user.is_staff %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'aprovar_produtos' %}">Aprovar Produtos</a>
+                            <a class="nav-link fw-semibold text-white" href="{% url 'aprovar_produtos' %}">Aprovar Produtos</a>
                         </li>
                     {% endif %}
 
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'perfil_usuario' %}">Perfil</a>
+                            <a class="nav-link fw-semibold text-white" href="{% url 'perfil_usuario' %}">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger" href="{% url 'logout' %}">Sair</a>
+                            <a class="nav-link fw-semibold text-danger" href="{% url 'logout' %}">Sair</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Entrar</a>
+                            <a class="nav-link fw-semibold text-white" href="{% url 'login' %}">Entrar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}">Cadastrar</a>
+                            <a class="nav-link fw-semibold text-white" href="{% url 'register' %}">Cadastrar</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -76,7 +75,7 @@
     <footer class="bg-dark text-white py-4 mt-auto">
         <div class="container text-center">
             <p class="mb-0">&copy; 2024 SALEFRUITS. Todos os direitos reservados.</p>
-            <p class="mb-0 small">Desenvolvido por <a href="#" class="text-white text-decoration-none">Sua Empresa</a></p>
+            <p class="mb-0 small">Desenvolvido por <a href="#" class="text-white text-decoration-none"> Jean Barbosa - Maicon Douglas - Renan Magalhães</a></p>
         </div>
     </footer>
 

@@ -31,10 +31,12 @@
                         <br>
                         <p><strong>Email:</strong> {{ usuario.user.email }}</p>
                         <p><strong>Data de cadastro:</strong> {{ usuario.user.date_joined }}</p>
+
                         <div class="mt-4">
                             <a href="{% url 'editar' usuario.user.id %}" class="btn btn-success me-2">Editar Perfil</a>
                             <a href="{% url 'excluir' usuario.user.id %}" class="btn btn-danger">Excluir Perfil</a>
                         </div>
+                        
                     </div>
                 </div>
             </div>

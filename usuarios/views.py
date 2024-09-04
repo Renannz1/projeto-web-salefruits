@@ -31,12 +31,13 @@ def editar_usuario(request, usuario_id):
                 # Salva as alterações no perfil do usuário
                 form.save()
                 # Redireciona para a página de listagem de usuários após salvar
-                return redirect('listar_mural')
+                return render(request, 'login/perfil.html', {'usuario': usuario})
+
         else:
             # Se a requisição não for POST, cria uma instância do formulário com os dados atuais do perfil
             form = UsuarioForm(instance=usuario)
         # Renderiza a página de edição de usuário com o formulário (vazio ou preenchido)
-        return render(request, 'login/editar.html', {'form': form})
+        return render(request, 'login/editar.html', {'form': form, 'usuario': usuario})
     else:
         # Se o usuário logado não tiver permissão, lança uma exceção de permissão negada
         raise PermissionDenied
