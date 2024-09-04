@@ -3,19 +3,19 @@ from django.contrib.auth.decorators import login_required
 from .models import Notificacao, Solicitacao, Produto
 from .forms import SolicitarProdutoForm
 
-# ------- Método para listar todas as solicitações -------
+#método para listar todas as solicitações
 @login_required
 def listar_solicitacoes(request):
     solicitacoes = Solicitacao.objects.filter(comprador=request.user)
     return render(request, 'solicitacao/listar_solicitacoes.html', {'solicitacoes': solicitacoes})
 
-# ------- Método para visualizar detalhes de uma solicitação -------
+#método para visualizar detalhes de uma solicitação
 @login_required
 def detalhar_solicitacao(request, id):
     solicitacao = get_object_or_404(Solicitacao, id=id)
     return render(request, 'solicitacao/detalhar_solicitacao.html', {'solicitacao': solicitacao})
 
-# ------- Método para adicionar uma nova solicitação -------
+#método para adicionar uma nova solicitação
 @login_required
 def adicionar_solicitacao(request):
     if request.method == 'POST':
@@ -23,7 +23,7 @@ def adicionar_solicitacao(request):
         produto_id = request.POST.get('produto_id')
 
         if not produto_id:
-            return redirect('listar_produtos')  # Redireciona caso não tenha produto_id
+            return redirect('listar_produtos')  #Redireciona caso não tenha produto_id
 
         produto = get_object_or_404(Produto, id=produto_id)
         
@@ -40,7 +40,7 @@ def adicionar_solicitacao(request):
             Notificacao.objects.create(
                 vendedor=produto.usuario,
                 solicitacao=solicitacao,
-                mensagem=f"Nova solicitação de {request.user.username} para o produto {produto.nome}."
+                mensagem=f"{request.user.username} solicitou {quantidade} para o produto {produto.nome}."
                 
             )
             return redirect('listar_solicitacoes')
@@ -54,7 +54,7 @@ def adicionar_solicitacao(request):
     
     return render(request, 'solicitacao/form_solicitacao.html', {'form': form, 'produto': produto})
 
-# ------- Método para editar uma solicitação -------
+#método para editar uma solicitação
 @login_required
 def editar_solicitacao(request, id):
     solicitacao = get_object_or_404(Solicitacao, id=id)
@@ -67,7 +67,7 @@ def editar_solicitacao(request, id):
         form = SolicitarProdutoForm(instance=solicitacao)
     return render(request, 'solicitacao/form_solicitacao.html', {'form': form})
 
-# ------- Método para excluir uma solicitação -------
+#método para excluir uma solicitação
 @login_required
 def excluir_solicitacao(request, id):
     solicitacao = get_object_or_404(Solicitacao, id=id)
@@ -76,13 +76,14 @@ def excluir_solicitacao(request, id):
         return redirect('listar_solicitacoes')
     return render(request, 'solicitacao/confirmar_exclusao.html', {'solicitacao': solicitacao})
 
+#Lista todas as notificações não lidas do usuário logado e as exibe na página
 @login_required
 def listar_notificacoes(request):
     notificacoes = request.user.notificacoes.filter(lida=False)
-    print("Notificações:", notificacoes)  # Adicione isto para depuração
+    print("Notificações:", notificacoes)
     return render(request, 'listar_notificacoes.html', {'notificacoes': notificacoes})
 
-
+#Permite ao vendedor aceitar uma solicitação. Atualiza o status da solicitação para "Aceita" e marca a notificação como lida.python
 @login_required
 def aceitar_solicitacao(request, notificacao_id):
     notificacao = get_object_or_404(Notificacao, id=notificacao_id)
@@ -93,7 +94,7 @@ def aceitar_solicitacao(request, notificacao_id):
     notificacao.save()
     return redirect('listar_notificacoes')
 
-
+#Permite ao vendedor recusar uma solicitação. Atualiza o status da solicitação para "Recusada" e marca a notificação como lida.
 @login_required
 def recusar_solicitacao(request, notificacao_id):
     notificacao = get_object_or_404(Notificacao, id=notificacao_id)

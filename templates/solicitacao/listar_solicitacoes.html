@@ -18,6 +18,7 @@
                     <th>Vendedor</th>
                     <th>Quantidade</th>
                     <th>Data da Solicitação</th>
+                    <th>Status</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -29,9 +30,9 @@
                     <td>{{ solicitacao.vendedor.username }}</td>
                     <td>{{ solicitacao.quantidade }}</td>
                     <td>{{ solicitacao.data_solicitacao }}</td>
+                    <td> {{ solicitacao.status }} </td>
                     <td>
                         <a href="{% url 'detalhar_solicitacao' solicitacao.id %}" class="btn btn-info btn-sm">Detalhes</a>
-                        <a href="{% url 'editar_solicitacao' solicitacao.id %}" class="btn btn-warning btn-sm">Editar</a>
                         <a href="{% url 'excluir_solicitacao' solicitacao.id %}" class="btn btn-danger btn-sm">Excluir</a>
                     </td>
                 </tr>

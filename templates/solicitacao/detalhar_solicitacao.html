@@ -21,6 +21,7 @@
                 <p><strong>Vendedor:</strong> {{ solicitacao.vendedor.username }}</p>
                 <p><strong>Quantidade:</strong> {{ solicitacao.quantidade }}</p>
                 <p><strong>Data da Solicitação:</strong> {{ solicitacao.data_solicitacao }}</p>
+                <p><strong>Status da solicitacao:</strong> {{ solicitacao.status }} </p>
 
                 <a href="{% url 'listar_solicitacoes' %}" class="btn btn-warning btn-sm">Voltar para a lista</a>
             </div>
