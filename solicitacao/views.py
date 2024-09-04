@@ -92,7 +92,7 @@ def aceitar_solicitacao(request, notificacao_id):
     solicitacao.save()
     notificacao.lida = True
     notificacao.save()
-    return redirect('listar_notificacoes')
+    return redirect('home')
 
 #Permite ao vendedor recusar uma solicitação. Atualiza o status da solicitação para "Recusada" e marca a notificação como lida.
 @login_required
