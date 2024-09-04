@@ -1,0 +1,75 @@
+/* aceitar_notificacao.css */
+
+/* Estilo para o título */
+.titulo {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para a tabela de notificações */
+.tabela-notificacoes {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.tabela-notificacoes th, .tabela-notificacoes td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela-notificacoes th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tabela-notificacoes tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabela-notificacoes tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para os botões de ação */
+.btn-acao {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px; /* Borda arredondada */
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+.btn-acao.aprovar {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+}
+
+.btn-acao.aprovar:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.btn-acao.rejeitar {
+    background-color: #dc3545; /* Vermelho */
+    color: #fff;
+}
+
+.btn-acao.rejeitar:hover {
+    background-color: #c82333;
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Estilo para a mensagem quando não há notificações */
+.nenhuma-notificacao {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}

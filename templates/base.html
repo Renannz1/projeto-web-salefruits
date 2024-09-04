@@ -12,6 +12,8 @@
   <!-- Link para o CSS específico da página -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
 </head>
 <body>
     <!-- CABEÇALHO -->
@@ -30,6 +32,9 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'listar_solicitacoes' %}">Solicitações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_notificacoes' %}">Notificações</a>
                     </li>
 
                     <!-- Se o usuário for um administrador, exibe o link para aprovação de produtos -->
