@@ -1,0 +1,86 @@
+@startuml
+
+class Usuario {
+    +int id
+    +String username
+    +String email
+    +String password
+    +<other fields>
+    
+    +editar_usuario(request: HttpRequest, usuario_id: int): HttpResponse
+    +excluir_usuario(request: HttpRequest, id: int): HttpResponse
+    +perfil_usuario(request: HttpRequest): HttpResponse
+    +register(request: HttpRequest): HttpResponse
+    +login_view(request: HttpRequest): HttpResponse
+    +custom_logout(request: HttpRequest): HttpResponse
+}
+
+class User {
+    +int id
+    +String username
+    +String email
+    +String password
+    +<other fields>
+}
+
+class UserRegisterForm {
+    +String username
+    +String email
+    +String password
+    +<methods>
+}
+
+class UsuarioForm {
+    +String username
+    +String email
+    +String password
+    +<methods>
+}
+
+class UserLoginForm {
+    +String username
+    +String password
+    +<methods>
+}
+
+class Produto {
+    +int id
+    +String nome
+    +String descricao
+    +float preco
+    +StatusProduto status
+    +User usuario
+    +<other fields>
+    
+    +listar_produtos(request: HttpRequest): HttpResponse
+    +adicionar_produto(request: HttpRequest): HttpResponse
+    +editar_produto(request: HttpRequest, id: int): HttpResponse
+    +excluir_produto(request: HttpRequest, id: int): HttpResponse
+    +detalhar_produto(request: HttpRequest, id: int): HttpResponse
+}
+
+class StatusProduto {
+    +String PENDENTE
+    +String APROVADO
+    +String REJEITADO
+}
+
+class FiltroProdutoForm {
+    +String nome
+    +String descricao
+    +float preco_min
+    +float preco_max
+    +<methods>
+}
+
+class ProdutoForm {
+    +String nome
+    +String descricao
+    +float preco
+    +<methods>
+}
+
+Usuario -- User
+Produto -- StatusProduto
+
+@enduml

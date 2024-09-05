@@ -73,6 +73,30 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -546,14 +570,6 @@
         "documentation": {}
     },
     {
-        "label": "JsonResponse",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -819,6 +835,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "pyexpat.errors",
+        "description": "pyexpat.errors",
+        "isExtraImport": true,
+        "detail": "pyexpat.errors",
+        "documentation": {}
+    },
+    {
         "label": "Room",
         "importPath": "chat.models",
         "description": "chat.models",
@@ -903,6 +927,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "chat.migrations.0004_remove_room_users_room_messages_room_user",
+        "description": "chat.migrations.0004_remove_room_users_room_messages_room_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('chat', '0003_remove_room_messages_remove_room_user_room_users'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='room',\n            name='users',\n        ),",
+        "detail": "chat.migrations.0004_remove_room_users_room_messages_room_user",
+        "documentation": {}
+    },
+    {
         "label": "ChatConfig",
         "kind": 6,
         "importPath": "chat.apps",
@@ -916,7 +949,7 @@
         "kind": 6,
         "importPath": "chat.models",
         "description": "chat.models",
-        "peekOfCode": "class Room(models.Model):\n    users = models.ManyToManyField(settings.AUTH_USER_MODEL)\n    title = models.CharField(max_length=200)\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.title\nclass Message(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    tex = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)",
+        "peekOfCode": "class Room(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    messages = models.ManyToManyField('Message', blank=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.title\nclass Message(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    tex = models.TextField()",
         "detail": "chat.models",
         "documentation": {}
     },
@@ -934,7 +967,7 @@
         "kind": 5,
         "importPath": "chat.urls",
         "description": "chat.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.home, name=\"home\"),\n    path('create-room', views.create_room, name=\"create_room\"),\n    path('<pk>/', views.RoomDetailView.as_view(), name=\"room_detail\"),\n    path('<pk>/send', views.send_message, name=\"send_message\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.home, name=\"home\"),\n    path('create-room', views.create_room, name=\"create_room\"),\n    path('<pk>', views.RoomDetailView.as_view(), name=\"room_detail\"),\n    path('<pk>/send', views.send_message, name=\"send_message\"),\n]",
         "detail": "chat.urls",
         "documentation": {}
     },
@@ -943,7 +976,7 @@
         "kind": 6,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "class RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        room = self.get_object()\n        context['messages'] = room.messages.all()\n        return context\ndef send_message(request, pk):\n    if request.method == 'POST':",
+        "peekOfCode": "class RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context\ndef send_message(request, pk):\n    data = json.loads(request.body)\n    room = Room.objects.get(id=pk)\n    new_message = Message.objects.create(user = request.user, tex=data['message'])",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -952,7 +985,7 @@
         "kind": 2,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "def home(request):\n    rooms = Room.objects.all().order_by('-created_at')\n    return render(request, 'chat/home.html', {'rooms': rooms})\nclass RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        room = self.get_object()\n        context['messages'] = room.messages.all()",
+        "peekOfCode": "def home(request):\n    rooms = Room.objects.all().order_by('-created_at')\n    return render(request, 'chat/home.html', {'rooms': rooms,\n    })\nclass RoomDetailView(DetailView):\n    model = Room\n    template_name = 'chat/list-messages.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -961,7 +994,7 @@
         "kind": 2,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "def send_message(request, pk):\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        room = Room.objects.get(id=pk)\n        new_message = Message.objects.create(user=request.user, tex=data['message'])\n        room.messages.add(new_message)\n        return JsonResponse({'message': new_message.tex, 'user': new_message.user.username})\n    return JsonResponse({'error': 'Invalid request'}, status=400)\ndef create_room(request):\n    if request.method == 'POST':",
+        "peekOfCode": "def send_message(request, pk):\n    data = json.loads(request.body)\n    room = Room.objects.get(id=pk)\n    new_message = Message.objects.create(user = request.user, tex=data['message'])\n    room.messages.add(new_message)\n    return render(request, 'chat/message.html', {\n        'm': new_message\n    })\ndef create_room(request):\n    data = json.loads(request.body)",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -970,7 +1003,7 @@
         "kind": 2,
         "importPath": "chat.views",
         "description": "chat.views",
-        "peekOfCode": "def create_room(request):\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        title = data.get('title')\n        room = Room.objects.create(title=title)\n        room.users.add(request.user)\n        return JsonResponse({'room_id': room.id, 'title': room.title})\n    return JsonResponse({'error': 'Invalid request'}, status=400)",
+        "peekOfCode": "def create_room(request):\n    data = json.loads(request.body)\n    room = Room.objects.create(user=request.user, title=data['title'])\n    return render(request, 'chat/room.html', {\n        'r': room\n    })",
         "detail": "chat.views",
         "documentation": {}
     },
@@ -1222,7 +1255,7 @@
         "kind": 5,
         "importPath": "salefruits.settings",
         "description": "salefruits.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'salefruits.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n]",
         "detail": "salefruits.settings",
         "documentation": {}
     },
@@ -1492,7 +1525,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:\n            return redirect('listar_produtos')  #Redireciona caso não tenha produto_id\n        produto = get_object_or_404(Produto, id=produto_id)\n        if form.is_valid():\n            quantidade = form.cleaned_data['quantidade']\n            solicitacao = Solicitacao.objects.create(",
+        "peekOfCode": "def adicionar_solicitacao(request):\n    if request.method == 'POST':\n        form = SolicitarProdutoForm(request.POST)\n        produto_id = request.POST.get('produto_id')\n        if not produto_id:\n            return redirect('listar_produtos')  # Redireciona caso não tenha produto_id\n        produto = get_object_or_404(Produto, id=produto_id)\n        if form.is_valid():\n            quantidade = form.cleaned_data['quantidade']\n            if quantidade > produto.quantidade:",
         "detail": "solicitacao.views",
         "documentation": {}
     },
@@ -1528,7 +1561,7 @@
         "kind": 2,
         "importPath": "solicitacao.views",
         "description": "solicitacao.views",
-        "peekOfCode": "def aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    # Atualiza o status da solicitação para \"Aceita\" e marca a notificação como lida\n    solicitacao.status = 'Aceita'\n    solicitacao.save()\n    notificacao.lida = True\n    notificacao.save()\n    # Cria a sala de chat\n    room_title = f\"Solicitação #{solicitacao.id}\"",
+        "peekOfCode": "def aceitar_solicitacao(request, notificacao_id):\n    notificacao = get_object_or_404(Notificacao, id=notificacao_id)\n    solicitacao = notificacao.solicitacao\n    # Atualiza o status da solicitação para \"Aceita\" e marca a notificação como lida\n    solicitacao.status = 'Aceita'\n    solicitacao.save()\n    notificacao.lida = True\n    notificacao.save()\n    return redirect('listar_notificacoes')\n#Permite ao vendedor recusar uma solicitação. Atualiza o status da solicitação para \"Recusada\" e marca a notificação como lida.",
         "detail": "solicitacao.views",
         "documentation": {}
     },
